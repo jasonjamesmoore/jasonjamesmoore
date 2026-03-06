@@ -1,4 +1,26 @@
-# Jason James Moore – Monorepo
+# Jason Moore
+
+Frontend systems engineer focused on building modern web platforms with strong content architecture, editorial workflows, and scalable frontend systems.
+
+My recent work includes:
+
+• A production subscription scheduling system using Stripe’s Subscription Schedules API with automated seasonal pricing and webhook orchestration  
+• An interactive music theory learning platform with a custom calculation engine handling complex domain logic  
+• Headless CMS editorial governance models using Next.js and Sanity
+
+Tech: Next.js · TypeScript · React · Headless CMS · Platform Architecture
+
+## Selected Work
+
+- **Tidal Cans Subscription Scheduler** – Production Stripe billing engine with dynamic seasonal pricing  
+- **PracticeKit** – Music theory learning platform with enharmonic calculation engine  
+- **Developer Portfolio** – Case studies and architecture walkthroughs
+
+Portfolio: https://dev.jasonjamesmoore.com
+
+
+<details>
+    <summary> # Jason James Moore – Monorepo - click to expand </summary>
 
 This is the monorepo for Jason James Moore’s personal web projects, including his music site, software development portfolio, and public landing page.
 
@@ -7,7 +29,7 @@ This is the monorepo for Jason James Moore’s personal web projects, including 
 ```bash
 jason-james-moore/
 ├── music/   # Public site for saxophone lessons, performances, and teaching
-├── dev/     # Developer portfolio (React, TypeScript, full-stack work)
+├── dev/     # Developer portfolio (modern web platforms and frontend systems)
 └── www/     # Main landing hub at www.jasonjamesmoore.com
 ```
 
@@ -34,3 +56,4 @@ These projects are deployed via [Vercel](https://vercel.com), each using its own
 ##  Environment Variables
 
 Each sub-project uses `.env.local` for storing local secrets like API keys, email credentials, or service tokens .
+</details>
