@@ -2,22 +2,32 @@
 
 Frontend systems engineer focused on building modern web platforms with strong content architecture, editorial workflows, and scalable frontend systems.
 
-My recent work includes:
+---
 
-• A production subscription scheduling system using Stripe’s Subscription Schedules API with automated seasonal pricing and webhook orchestration  
-• An interactive music theory learning platform with a custom calculation engine handling complex domain logic  
-• Headless CMS editorial governance models using Next.js and Sanity
+## Focus Areas
 
-Tech: Next.js · TypeScript · React · Headless CMS · Platform Architecture
+• Headless CMS architecture and editorial governance  
+• Next.js platform development  
+• Type-safe frontend systems with TypeScript  
+• Complex domain logic and API orchestration
+
+---
 
 ## Selected Work
 
-- **Tidal Cans Subscription Scheduler** – Production Stripe billing engine with dynamic seasonal pricing  
-- **PracticeKit** – Music theory learning platform with enharmonic calculation engine  
-- **Developer Portfolio** – Case studies and architecture walkthroughs
+**Tidal Cans Subscription Scheduler**  
+Production Stripe billing engine with dynamic seasonal pricing and webhook orchestration.
 
-Portfolio: https://dev.jasonjamesmoore.com
+**PracticeKit**  
+Interactive music theory learning platform with custom enharmonic calculation engine.
 
+**Developer Portfolio**  
+Architecture walkthroughs and case studies.
+
+Portfolio:  
+https://dev.jasonjamesmoore.com
+
+---
 
 <details>
     <summary> # Jason James Moore – Monorepo - click to expand </summary>
