@@ -24,7 +24,7 @@ Interactive music theory learning platform with custom enharmonic calculation en
 **Developer Portfolio**  
 Architecture walkthroughs and case studies.
 
-Portfolio:  
+🌐 Portfolio:  
 https://dev.jasonjamesmoore.com
 
 ---
