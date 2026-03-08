@@ -33,11 +33,10 @@ export function AppLayout({ children }: AppLayoutProps) {
                     </h1>
                   </Link>
                   <h2 className="mt-3 text-lg font-medium tracking-tight text-slate-200 sm:text-xl">
-                    Full-stack developer
+                    Systems-focused full-stack developer
                   </h2>
                   <p className="mt-4 max-w-xs text-[#9ca3af] leading-normal">
-                    I create intuitive, durable tools that make complex
-                    workflows feel simple.
+                    I build <b className="text-[#fafafa]">durable software</b> that makes <b className="text-[#fafafa]">complex workflows</b> simple.
                   </p>
                   <Link
                     href="/contact"

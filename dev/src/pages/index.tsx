@@ -115,14 +115,31 @@ export default function Home() {
           <div className="grid grid-cols-1 gap-2">
             <p className="text-[#9ca3af]">
               I'm a{" "}
+              <b className="text-[#fafafa]">software developer</b>{" "} 
+              based in Wilmington, NC focused on building clear, durable systems 
+              for real-world workflows. My background as an educator shapes how I 
+              approach software: clarity, communication, and systems that stay 
+              understandable as they grow. 
+            </p>
+            <p className="text-[#9ca3af]">
+              I primarily work with <b className="text-[#fafafa]">React</b>,{" "} 
+              <b className="text-[#fafafa]">Next.js</b>,{" "}
+              <b className="text-[#fafafa]">TypeScript</b>,{" "}
+              <b className="text-[#fafafa]">Postgres/Supabase</b>, and{" "}
+              <b className="text-[#fafafa]">Stripe</b>, 
+              building production systems for startups and small businesses—from{" "}
+              <b className="text-[#fafafa]">subscription platforms</b> to <b className="text-[#fafafa]">internal tools</b> and <b className="text-[#fafafa]">onboarding systems</b>.
+            </p>
+            {/* <p className="text-[#9ca3af]">
+              I'm a{" "}
               <b className="text-[#fafafa]">software developer and educator</b>{" "}
               based in Wilmington, NC, specializing in building clear, reliable
               tools that make complex workflows feel simple. A long-time music
               educator and professional saxophonist, I’ve transitioned into
               software engineering where I bring the same curiosity, focus, and
               communication skills that defined my earlier career.
-            </p>
-            <p className="text-[#9ca3af]">
+            </p> */}
+            {/* <p className="text-[#9ca3af]">
               I work primarily with <b className="text-[#fafafa]">React</b>,{" "}
               <b className="text-[#fafafa]">Next.js</b>,{" "}
               <b className="text-[#fafafa]">TypeScript</b>,{" "}
@@ -135,7 +152,7 @@ export default function Home() {
               <b className="text-[#fafafa]">subscription logic</b> to{" "}
               <b className="text-[#fafafa]">internal tools</b> and{" "}
               <b className="text-[#fafafa]">custom quoting applications</b>.
-            </p>
+            </p> */}
             <p className="text-[#9ca3af]">
               I care deeply about clean architecture, thoughtful UX, and
               building software that holds up in real-world use. Whether
@@ -158,19 +175,19 @@ export default function Home() {
               <li className="flex items-start">
                 <span className="text-[#10b981] mr-3">▹</span>
                 <span>
-                  Working with teams on modern React and Next.js applications
+                  Working with teams building modern React and Next.js platforms
                 </span>
               </li>
               <li className="flex items-start">
                 <span className="text-[#10b981] mr-3">▹</span>
                 <span>
-                  Open to contract, freelance, or long-term collaborations
+                  Open to contract, freelance, or long-term engineering roles
                 </span>
               </li>
               <li className="flex items-start">
                 <span className="text-[#10b981] mr-3">▹</span>
                 <span>
-                  Interested in building clear, durable product workflows end-to-end
+                  Interested in solving complex product workflows end-to-end
                 </span>
               </li>
             </ul>
@@ -189,7 +206,8 @@ export default function Home() {
               endDate="Ongoing Contract"
               title="Full-stack Developer"
               company="Tidal Cans"
-              description="Built a multi-step onboarding MVP with Stripe subscription management and seasonal pricing logic. Also worked on infrastructure improvements for an existing application, including security hardening, redeployment, and implementing logging and backup systems. Improvements and additional features in development."
+              description="Built a production onboarding and subscription management system using Stripe Subscription Schedules with dynamic seasonal pricing. 
+              Also led infrastructure improvements including deployment hardening, security updates, and logging/backup implementation for an existing production platform."
               technologies={[
                 "React",
                 "TypeScript",
