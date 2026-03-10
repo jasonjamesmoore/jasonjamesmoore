@@ -7,6 +7,9 @@ import { TechBadge } from "@/components/TechBadge";
 const projects = [
   {
     title: "Subscription Scheduler with Dynamic Pricing",
+    role: "Solo Full-stack Engineer",
+    outcome:
+      "Automated seasonal subscription billing and onboarding for a residential service business",
     description:
       "Built a multi-step onboarding and subscription management system for a residential trash valet service. Implemented location-based seasonal pricing using Stripe Subscription Schedules, where subscription costs automatically adjust throughout the year based on each property's seasonal service windows. Features webhook-driven schedule creation, metadata-encoded business rules, and comprehensive invoice previews.\n\n**This portfolio demo mirrors the live production system.**\n\n",
     techStack: [
@@ -46,6 +49,9 @@ const projects = [
   },
   {
     title: "PracticeKit: Interactive Music Theory Learning Platform",
+    role: "Designer and full-stack developer",
+    outcome:
+      "Built an interactive learning platform powered by a custom music-theory calculation engine",
     description:
       "Built a modular music theory practice platform with interactive flashcard quizzes. Implemented a sophisticated enharmonic calculation engine that validates 12,789 possible note/key/degree combinations in real-time. Features four quiz modes with contextual filtering, prompt locking for focused practice, custom color theming with light/dark modes, and multi-step onboarding system.\n\n**Personal project for musicians learning theory fundamentals.**\n\n",
     techStack: [
@@ -109,50 +115,28 @@ const projects = [
 export default function Home() {
   return (
     <AppLayout>
-      <div className="space-y-24 pb-[50vh]">
+      <div className="pb-100">
         {/* About */}
-        <section id="about" className="scroll-mt-24 space-y-8">
-          <div className="grid grid-cols-1 gap-2">
+        <section id="about" className="scroll-mt-24 space-y-6">
+          <div className="space-y-3">
             <p className="text-[#9ca3af]">
-              I'm a{" "}
-              <b className="text-[#fafafa]">software developer</b>{" "} 
-              based in Wilmington, NC focused on building clear, durable systems 
-              for real-world workflows. My background as an educator shapes how I 
-              approach software: clarity, communication, and systems that stay 
-              understandable as they grow. 
+              I'm a <b className="text-[#fafafa]">software developer</b> based
+              in Wilmington, NC focused on building clear, durable systems for
+              real-world workflows. My background as an educator shapes how I
+              approach software: clarity, communication, and systems that stay
+              understandable as they grow.
             </p>
             <p className="text-[#9ca3af]">
-              I primarily work with <b className="text-[#fafafa]">React</b>,{" "} 
+              I primarily work with <b className="text-[#fafafa]">React</b>,{" "}
               <b className="text-[#fafafa]">Next.js</b>,{" "}
               <b className="text-[#fafafa]">TypeScript</b>,{" "}
               <b className="text-[#fafafa]">Postgres/Supabase</b>, and{" "}
-              <b className="text-[#fafafa]">Stripe</b>, 
-              building production systems for startups and small businesses—from{" "}
-              <b className="text-[#fafafa]">subscription platforms</b> to <b className="text-[#fafafa]">internal tools</b> and <b className="text-[#fafafa]">onboarding systems</b>.
-            </p>
-            {/* <p className="text-[#9ca3af]">
-              I'm a{" "}
-              <b className="text-[#fafafa]">software developer and educator</b>{" "}
-              based in Wilmington, NC, specializing in building clear, reliable
-              tools that make complex workflows feel simple. A long-time music
-              educator and professional saxophonist, I’ve transitioned into
-              software engineering where I bring the same curiosity, focus, and
-              communication skills that defined my earlier career.
-            </p> */}
-            {/* <p className="text-[#9ca3af]">
-              I work primarily with <b className="text-[#fafafa]">React</b>,{" "}
-              <b className="text-[#fafafa]">Next.js</b>,{" "}
-              <b className="text-[#fafafa]">TypeScript</b>,{" "}
-              <b className="text-[#fafafa]">Postgres/Supabase</b>, and{" "}
-              <b className="text-[#fafafa]">Stripe</b>, and I love designing
-              user interfaces that are easy to understand but powerful under the
-              hood. I've built production-ready systems for startups, small
-              businesses, and freelance clients—everything from{" "}
-              <b className="text-[#fafafa]">multi-step onboarding flows</b> with{" "}
-              <b className="text-[#fafafa]">subscription logic</b> to{" "}
+              <b className="text-[#fafafa]">Stripe</b>, building production
+              systems for startups and small businesses—from{" "}
+              <b className="text-[#fafafa]">subscription platforms</b> to{" "}
               <b className="text-[#fafafa]">internal tools</b> and{" "}
-              <b className="text-[#fafafa]">custom quoting applications</b>.
-            </p> */}
+              <b className="text-[#fafafa]">onboarding systems</b>.
+            </p>
             <p className="text-[#9ca3af]">
               I care deeply about clean architecture, thoughtful UX, and
               building software that holds up in real-world use. Whether
@@ -165,13 +149,42 @@ export default function Home() {
               commitment to continuous learning.
             </p>
           </div>
+        </section>
 
+        {/* Approach */}
+        <section className="pt-16 space-y-6">
+          <div className="space-y-4">
+            <h2 id="approach" className="scroll-mt-24 text-2xl font-bold text-[#fafafa]">Approach</h2>
+            <p className="text-[#9ca3af] leading-relaxed">
+              I enjoy working on systems that need to stay understandable as
+              they grow.
+            </p>
+            <p className="text-[#9ca3af] leading-relaxed">
+              The work I&apos;m most drawn to sits at the intersection of:
+            </p>
+            <div className="border-l-2 border-[#10b981] pl-6 space-y-3">
+              <ul className="space-y-3 text-[#9ca3af]">
+                <li className="flex items-start">
+                  <span className="text-[#10b981] mr-3">▹</span>
+                  <span>product workflows</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-[#10b981] mr-3">▹</span>
+                  <span>developer experience</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-[#10b981] mr-3">▹</span>
+                  <span>long-term maintainability</span>
+                </li>
+              </ul>
+            </div>
+          </div>
           {/* Currently Section */}
-          <div className="border-l-2 border-[#10b981] pl-6 space-y-3 mt-20">
+          {/* <div className="border-l-2 border-[#10b981] pl-6 space-y-3">
             <h3 className="text-sm font-bold text-[#10b981] uppercase tracking-wide">
               Currently
             </h3>
-            <ul className="space-y-2 text-[#9ca3af]">
+            <ul className="space-y-3 text-[#9ca3af]">
               <li className="flex items-start">
                 <span className="text-[#10b981] mr-3">▹</span>
                 <span>
@@ -191,16 +204,28 @@ export default function Home() {
                 </span>
               </li>
             </ul>
+          </div> */}
+        </section>
+
+        {/* Projects */}
+        <section className="pt-24 space-y-6">
+          <h2 id="projects" className="scroll-mt-24 text-2xl font-bold text-[#fafafa]">
+            Selected Projects
+          </h2>
+          <div className="space-y-6">
+            {projects.map((project) => (
+              <ProjectCard key={project.title} {...project} />
+            ))}
           </div>
         </section>
 
         {/* Experience */}
-        <section id="experience" className="scroll-mt-24 space-y-8">
-          <h2 className="text-2xl font-bold text-[#fafafa]">
+        <section className="pt-16 space-y-6">
+          <h2 id="experience" className="scroll-mt-24 text-2xl font-bold text-[#fafafa]">
             Selected Experience
           </h2>
 
-          <div className="space-y-12">
+          <div className="space-y-4">
             <ExperienceCard
               startDate="2025"
               endDate="Ongoing Contract"
@@ -230,22 +255,12 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Projects */}
-        <section id="projects" className="scroll-mt-24 space-y-8">
-          <h2 className="text-2xl font-bold text-[#fafafa]">
-            Selected Projects
-          </h2>
-          <div className="space-y-4">
-            {projects.map((project) => (
-              <ProjectCard key={project.title} {...project} />
-            ))}
-          </div>
-        </section>
+        
 
         {/* Tech Stack */}
-        <section id="tech" className="scroll-mt-24 space-y-8">
-          <h2 className="text-2xl font-bold text-[#fafafa]">Tech I Use</h2>
-          <div className="flex flex-wrap gap-3">
+        <section className="pt-16 space-y-6">
+          <h2 id="tech" className="scroll-mt-24 text-2xl font-bold text-[#fafafa]">Tech I Use</h2>
+          <div className="flex flex-wrap gap-2">
             {[
               "JavaScript",
               "TypeScript",

@@ -43,7 +43,7 @@ export const ExperienceCard: React.FC<ExperienceCardProps> = ({
           </div>
 
           {/* Content Column */}
-          <div className="md:col-span-3 space-y-3">
+          <div className="md:col-span-3 space-y-4">
             <h3 className="text-lg font-medium text-[#fafafa] group-hover:text-[#10b981] transition-colors">
               {title} · {company}
             </h3>

@@ -16,6 +16,8 @@ import ReactMarkdown from "react-markdown";
 
 interface ProjectCardProps {
   title: string;
+  role: string;
+  outcome: string;
   description: string;
   techStack: string[];
   status: "MVP" | "In Progress" | "In Production";
@@ -29,6 +31,8 @@ interface ProjectCardProps {
 
 export function ProjectCard({
   title,
+  role,
+  outcome,
   description,
   techStack,
   status,
@@ -52,30 +56,49 @@ export function ProjectCard({
       {/* Card Preview - clickable */}
       <button onClick={() => setOpen(true)} className="w-full text-left">
         <Card className="border-transparent bg-transparent p-6 rounded-lg transition-all duration-300 hover:bg-[rgba(156,163,175,0.05)] hover:shadow-[0_0_20px_rgba(16,185,129,0.1)] cursor-pointer">
-          <div className="flex items-start justify-between mb-3">
-            <h3 className="text-lg font-bold text-[#fafafa] group-hover:text-[#10b981] transition">
-              {title}
-            </h3>
-            <Badge
-              variant="outline"
-              className={`text-xs px-2 py-1 ${statusColors[status]}`}
-            >
-              {status}
-            </Badge>
-          </div>
-          <div className="text-[#9ca3af] text-sm mb-4 [&_p]:!mb-2 [&_strong]:!text-[#fafafa] [&_strong]:!font-semibold">
-            <ReactMarkdown>{description}</ReactMarkdown>
-          </div>
-          <div className="flex flex-wrap gap-2">
-            {techStack.map((tech) => (
+          <div className="space-y-4">
+            <div className="flex items-start justify-between">
+              <h3 className="text-lg font-bold leading-tight text-[#fafafa] group-hover:text-[#10b981] transition">
+                {title}
+              </h3>
               <Badge
-                key={tech}
                 variant="outline"
-                className="bg-[rgba(16,185,129,0.1)] text-[#10b981] border-[rgba(16,185,129,0.2)] text-xs px-3 py-1 rounded-full"
+                className={`shrink-0 text-xs px-2 py-1 ${statusColors[status]}`}
               >
-                {tech}
+                {status}
               </Badge>
-            ))}
+            </div>
+
+            <div className="space-y-2 text-sm text-[#9ca3af]">
+              <div className="flex items-start gap-3">
+                <span className="min-w-[68px] font-semibold text-[#d4d4d8]">
+                  Role:
+                </span>
+                <span>{role}</span>
+              </div>
+              <div className="flex items-start gap-3">
+                <span className="min-w-[68px] font-semibold text-[#d4d4d8]">
+                  Outcome:
+                </span>
+                <span>{outcome}</span>
+              </div>
+            </div>
+
+            <div className="text-[#9ca3af] text-sm leading-7 [&_p]:mb-3 [&_p:last-child]:mb-0 [&_strong]:font-semibold [&_strong]:text-[#fafafa]">
+              <ReactMarkdown>{description}</ReactMarkdown>
+            </div>
+
+            <div className="flex flex-wrap gap-2 pt-1">
+              {techStack.map((tech) => (
+                <Badge
+                  key={tech}
+                  variant="outline"
+                  className="bg-[rgba(16,185,129,0.1)] text-[#10b981] border-[rgba(16,185,129,0.2)] text-xs px-3 py-1 rounded-full"
+                >
+                  {tech}
+                </Badge>
+              ))}
+            </div>
           </div>
         </Card>
       </button>
@@ -192,8 +215,6 @@ export function ProjectCard({
                 </ul>
               </div>
             )}
-
-
           </div>
         </DialogContent>
       </Dialog>

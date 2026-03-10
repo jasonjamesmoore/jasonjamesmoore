@@ -12,8 +12,9 @@ interface AppLayoutProps {
 export function AppLayout({ children }: AppLayoutProps) {
   const activeSection = useActiveSection([
     "about",
-    "experience",
+    "approach",
     "projects",
+    "experience",
     "tech",
   ]);
 
@@ -23,38 +24,39 @@ export function AppLayout({ children }: AppLayoutProps) {
         <div className="lg:flex lg:justify-between lg:gap-4">
           {/* Header/Sidebar */}
           <header className="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-[48%] lg:flex-col lg:justify-between lg:py-24 pb-12">
-            <div className="space-y-8">
+            <div className="space-y-6">
               {/* Intro */}
-              <div className="space-y-6">
-                <div className="space-y-3">
-                  <Link href="/" className="inline-block">
-                    <h1 className="text-4xl font-bold text-[#fafafa] leading-none sm:text-5xl">
-                      Jason James Moore
-                    </h1>
-                  </Link>
-                  <h2 className="mt-3 text-lg font-medium tracking-tight text-slate-200 sm:text-xl">
-                    Systems-focused full-stack developer
-                  </h2>
-                  <p className="mt-4 max-w-xs text-[#9ca3af] leading-normal">
-                    I build <b className="text-[#fafafa]">durable software</b> that makes <b className="text-[#fafafa]">complex workflows</b> simple.
-                  </p>
-                  <Link
-                    href="/contact"
-                    className="inline-flex items-center gap-2 mt-4 text-sm text-[#10b981] hover:text-[#fafafa] transition-colors group"
-                  >
-                    <span>Get in touch</span>
-                    <span className="text-[#fb923c] transition-transform group-hover:translate-x-1">
-                      →
-                    </span>
-                  </Link>
-                </div>
+              <div className="space-y-5">
+                <Link href="/" className="inline-block">
+                  <h1 className="text-4xl font-bold text-[#fafafa] leading-none sm:text-5xl">
+                    Jason James Moore
+                  </h1>
+                </Link>
+                <h2 className="text-lg font-medium tracking-tight text-slate-200 sm:text-xl">
+                  Systems-focused full-stack developer
+                </h2>
+
+                <p className="max-w-xs text-[#9ca3af] leading-normal">
+                  I build <b className="text-[#fafafa]">durable systems</b> that
+                  make <b className="text-[#fafafa]">complex workflows</b>{" "}
+                  simple.
+                </p>
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-2 text-sm text-[#10b981] hover:text-[#fafafa] transition-colors group"
+                >
+                  <span>Get in touch</span>
+                  <span className="text-[#fb923c] transition-transform group-hover:translate-x-1">
+                    →
+                  </span>
+                </Link>
               </div>
 
               {/* Navigation - In-page jump links */}
-              <nav className="hidden lg:block space-y-1 pt-8">
+              <nav className="hidden lg:block space-y-1 pt-4">
                 <Link
                   href="/#about"
-                  className={`group flex items-start gap-2 py-3 transition-all duration-300 ${
+                  className={`group flex items-start gap-2 py-2.5 transition-all duration-300 ${
                     activeSection === "about"
                       ? "pl-4 text-[#10b981] font-bold"
                       : "pl-0 text-[#9ca3af] hover:pl-2 hover:text-[#fafafa]"
@@ -79,8 +81,58 @@ export function AppLayout({ children }: AppLayoutProps) {
                 </Link>
 
                 <Link
+                  href="/#approach"
+                  className={`group flex items-start gap-2 py-2.5 transition-all duration-300 ${
+                    activeSection === "approach"
+                      ? "pl-4 text-[#10b981] font-bold"
+                      : "pl-0 text-[#9ca3af] hover:pl-2 hover:text-[#fafafa]"
+                  }`}
+                >
+                  <span
+                    className={`text-xs text-[#fb923c] transition-opacity duration-300 ${
+                      activeSection === "approach" ? "opacity-100" : "opacity-0"
+                    }`}
+                  >
+                    ▹
+                  </span>
+                  <span
+                    className={`text-xs uppercase tracking-widest transition-all duration-300 ${
+                      activeSection === "approach"
+                        ? "scale-105"
+                        : "scale-100 group-hover:scale-102"
+                    } inline-block`}
+                  >
+                    Approach
+                  </span>
+                </Link>
+                <Link
+                  href="/#projects"
+                  className={`group flex items-start gap-2 py-2.5 transition-all duration-300 ${
+                    activeSection === "projects"
+                      ? "pl-4 text-[#10b981] font-bold"
+                      : "pl-0 text-[#9ca3af] hover:pl-2 hover:text-[#fafafa]"
+                  }`}
+                >
+                  <span
+                    className={`text-xs text-[#fb923c] transition-opacity duration-300 ${
+                      activeSection === "projects" ? "opacity-100" : "opacity-0"
+                    }`}
+                  >
+                    ▹
+                  </span>
+                  <span
+                    className={`text-xs uppercase tracking-widest transition-all duration-300 ${
+                      activeSection === "projects"
+                        ? "scale-105"
+                        : "scale-100 group-hover:scale-102"
+                    } inline-block`}
+                  >
+                    Projects
+                  </span>
+                </Link>
+                <Link
                   href="/#experience"
-                  className={`group flex items-start gap-2 py-3 transition-all duration-300 ${
+                  className={`group flex items-start gap-2 py-2.5 transition-all duration-300 ${
                     activeSection === "experience"
                       ? "pl-4 text-[#10b981] font-bold"
                       : "pl-0 text-[#9ca3af] hover:pl-2 hover:text-[#fafafa]"
@@ -107,34 +159,8 @@ export function AppLayout({ children }: AppLayoutProps) {
                 </Link>
 
                 <Link
-                  href="/#projects"
-                  className={`group flex items-start gap-2 py-3 transition-all duration-300 ${
-                    activeSection === "projects"
-                      ? "pl-4 text-[#10b981] font-bold"
-                      : "pl-0 text-[#9ca3af] hover:pl-2 hover:text-[#fafafa]"
-                  }`}
-                >
-                  <span
-                    className={`text-xs text-[#fb923c] transition-opacity duration-300 ${
-                      activeSection === "projects" ? "opacity-100" : "opacity-0"
-                    }`}
-                  >
-                    ▹
-                  </span>
-                  <span
-                    className={`text-xs uppercase tracking-widest transition-all duration-300 ${
-                      activeSection === "projects"
-                        ? "scale-105"
-                        : "scale-100 group-hover:scale-102"
-                    } inline-block`}
-                  >
-                    Projects
-                  </span>
-                </Link>
-
-                <Link
                   href="/#tech"
-                  className={`group flex items-start gap-2 py-3 transition-all duration-300 ${
+                  className={`group flex items-start gap-2 py-2.5 transition-all duration-300 ${
                     activeSection === "tech"
                       ? "pl-4 text-[#10b981] font-bold"
                       : "pl-0 text-[#9ca3af] hover:pl-2 hover:text-[#fafafa]"
