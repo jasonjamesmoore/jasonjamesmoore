@@ -19,14 +19,15 @@ interface ProjectCardProps {
   role: string;
   outcome: string;
   description: string;
+  modalSummary: string;
+  proofLine?: string;
   techStack: string[];
-  status: "MVP" | "In Progress" | "In Production";
-  whatWorking: string[];
-  whatNext: string[];
-  githubUrl: string;
+  status: "MVP" | "In Progress" | "In Production" | "Prototype";
+  validated: string[];
+  nextSteps: string[];
+  githubUrl?: string;
   liveUrl?: string;
-  subdomain?: string;
-  slug?: string; // For case study page link
+  slug: string;
 }
 
 export function ProjectCard({
@@ -34,13 +35,14 @@ export function ProjectCard({
   role,
   outcome,
   description,
+  modalSummary,
+  proofLine,
   techStack,
   status,
-  whatWorking,
-  whatNext,
+  validated,
+  nextSteps,
   githubUrl,
   liveUrl,
-  subdomain,
   slug,
 }: ProjectCardProps) {
   const [open, setOpen] = useState(false);
@@ -49,6 +51,7 @@ export function ProjectCard({
     MVP: "text-[#fb923c] border-[#fb923c]",
     "In Progress": "text-[#fb923c] border-[#fb923c]",
     "In Production": "text-[#10b981] border-[#10b981]",
+    Prototype: "text-[#3b82f6] border-[#3b82f6]",
   };
 
   return (
@@ -88,6 +91,12 @@ export function ProjectCard({
               <ReactMarkdown>{description}</ReactMarkdown>
             </div>
 
+            {proofLine && (
+              <p className="text-sm font-semibold text-[#fafafa]">
+                {proofLine}
+              </p>
+            )}
+
             <div className="flex flex-wrap gap-2 pt-1">
               {techStack.map((tech) => (
                 <Badge
@@ -119,15 +128,15 @@ export function ProjectCard({
               </Badge>
             </div>
             <DialogDescription className="text-[#9ca3af] text-base mt-4 [&_p]:!mb-3 [&_strong]:!text-[#fafafa] [&_strong]:!font-semibold">
-              <ReactMarkdown>{description}</ReactMarkdown>
+              <ReactMarkdown>{modalSummary}</ReactMarkdown>
             </DialogDescription>
           </DialogHeader>
 
           {/* Links - Prominent at top */}
           <div className="flex flex-wrap gap-3 pt-4 pb-4 border-b border-[rgba(156,163,175,0.1)]">
-            {(liveUrl || subdomain) && (
+            {liveUrl && (
               <a
-                href={liveUrl || subdomain}
+                href={liveUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-[#10b981] hover:text-[#fafafa] transition text-sm font-medium"
@@ -147,7 +156,6 @@ export function ProjectCard({
                 View Code
               </a>
             )}
-            {slug && (
               <Link
                 href={`/projects/${slug}`}
                 className="flex items-center gap-2 px-3 py-2 rounded-md bg-[rgba(156,163,175,0.05)] text-[#9ca3af] hover:bg-[rgba(16,185,129,0.1)] hover:text-[#10b981] transition text-sm"
@@ -156,7 +164,6 @@ export function ProjectCard({
                 Full Case Study
                 <ArrowRight size={16} color="#fb923c" />
               </Link>
-            )}
           </div>
 
           <div className="space-y-6 mt-6">
@@ -181,10 +188,10 @@ export function ProjectCard({
             {/* Working Features */}
             <div>
               <h4 className="text-sm font-bold text-[#10b981] uppercase tracking-wide mb-3">
-                ✓ Working
+                ✓ Validated
               </h4>
               <ul className="space-y-2">
-                {whatWorking.map((feature, i) => (
+                {validated.map((feature, i) => (
                   <li
                     key={i}
                     className="text-sm text-[#9ca3af] flex items-start"
@@ -197,13 +204,13 @@ export function ProjectCard({
             </div>
 
             {/* Next Steps */}
-            {whatNext.length > 0 && (
+            {nextSteps.length > 0 && (
               <div>
                 <h4 className="text-sm font-bold text-[#fb923c] uppercase tracking-wide mb-3">
-                  → Next
+                  → Next Steps
                 </h4>
                 <ul className="space-y-2">
-                  {whatNext.map((item, i) => (
+                  {nextSteps.map((item, i) => (
                     <li
                       key={i}
                       className="text-sm text-[#9ca3af] flex items-start"
