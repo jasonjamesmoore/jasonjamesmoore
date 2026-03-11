@@ -12,7 +12,7 @@ interface AppLayoutProps {
 export function AppLayout({ children }: AppLayoutProps) {
   const activeSection = useActiveSection([
     "about",
-    "approach",
+    "optimize",
     "projects",
     "experience",
     "tech",
@@ -81,28 +81,28 @@ export function AppLayout({ children }: AppLayoutProps) {
                 </Link>
 
                 <Link
-                  href="/#approach"
+                  href="/#optimize"
                   className={`group flex items-start gap-2 py-2.5 transition-all duration-300 ${
-                    activeSection === "approach"
+                    activeSection === "optimize"
                       ? "pl-4 text-[#10b981] font-bold"
                       : "pl-0 text-[#9ca3af] hover:pl-2 hover:text-[#fafafa]"
                   }`}
                 >
                   <span
                     className={`text-xs text-[#fb923c] transition-opacity duration-300 ${
-                      activeSection === "approach" ? "opacity-100" : "opacity-0"
+                      activeSection === "optimize" ? "opacity-100" : "opacity-0"
                     }`}
                   >
                     ▹
                   </span>
                   <span
                     className={`text-xs uppercase tracking-widest transition-all duration-300 ${
-                      activeSection === "approach"
+                      activeSection === "optimize"
                         ? "scale-105"
                         : "scale-100 group-hover:scale-102"
                     } inline-block`}
                   >
-                    Approach
+                    Optimize For
                   </span>
                 </Link>
                 <Link

@@ -2,115 +2,10 @@ import { AppLayout } from "@/components/AppLayout";
 import { ProjectCard } from "@/components/ProjectCard";
 import { ExperienceCard } from "@/components/ExperienceCard";
 import { TechBadge } from "@/components/TechBadge";
+import { projects } from "@/content/projectIndex";
 
-// Your project data
-const projects = [
-  {
-    title: "Subscription Scheduler with Dynamic Pricing",
-    role: "Solo Full-stack Engineer",
-    outcome:
-      "Automated seasonal subscription billing and onboarding for a residential service business",
-    description:
-      "Built a multi-step onboarding and subscription management system for a residential trash valet service. Implemented location-based seasonal pricing using Stripe Subscription Schedules, where subscription costs automatically adjust throughout the year based on each property's seasonal service windows. Features webhook-driven schedule creation, metadata-encoded business rules, and comprehensive invoice previews.\n\n**This portfolio demo mirrors the live production system.**\n\n",
-    techStack: [
-      "Next.js 15",
-      "TypeScript 5",
-      "React 19",
-      "Stripe API",
-      "React Hook Form 7",
-      "Zod 4",
-      "Tailwind CSS",
-      "shadcn/ui",
-    ],
-    status: "In Production" as const,
-    whatWorking: [
-      "Multi-step form with step-aware Zod validation",
-      "Stripe payment integration with Payment Intents",
-      "Dynamic multi-phase subscription schedule creation",
-      "Location-based service area validation (zip code matching)",
-      "Webhook handlers for subscription lifecycle events",
-      "Real-time invoice preview with phase breakdown",
-      "Per-property seasonal add-on configuration",
-      "Responsive UI with loading states and error handling",
-    ],
-    whatNext: [
-      "User authentication and account management",
-      "Admin dashboard for subscription oversight",
-      "Postgres integration for customer data persistence and contractor app consumption",
-      "Customer self-service portal (pause/cancel/modify)",
-      "Email notifications for seasonal phase transitions",
-      "Analytics dashboard for revenue forecasting",
-      "Automated testing suite (unit + integration)",
-      "Rate limiting and abuse prevention",
-    ],
-    githubUrl: "https://github.com/jasonjamesmoore/Stripe-Schedule-Onboarding",
-    subdomain: "https://onboard.jasonjamesmoore.com",
-    slug: "onboarding-subscription-mvp",
-  },
-  {
-    title: "PracticeKit: Interactive Music Theory Learning Platform",
-    role: "Designer and full-stack developer",
-    outcome:
-      "Built an interactive learning platform powered by a custom music-theory calculation engine",
-    description:
-      "Built a modular music theory practice platform with interactive flashcard quizzes. Implemented a sophisticated enharmonic calculation engine that validates 12,789 possible note/key/degree combinations in real-time. Features four quiz modes with contextual filtering, prompt locking for focused practice, custom color theming with light/dark modes, and multi-step onboarding system.\n\n**Personal project for musicians learning theory fundamentals.**\n\n",
-    techStack: [
-      "React 19",
-      "TypeScript 5",
-      "Vite 6",
-      "Mantine UI 7",
-      "React Router v7",
-      "Vitest",
-      "React Testing Library",
-    ],
-    status: "MVP" as const,
-    whatWorking: [
-      "Four quiz modes: Degree Finder, Note Finder, Key Finder, Key Signature Quiz",
-      "Enharmonic calculation engine with letter-based interval logic",
-      "Smart card generation with validation (filters invalid combinations)",
-      "Priority filtering system (harmonic extensions vs. scale degrees)",
-      "Prompt locking feature for practicing specific keys/notes",
-      "Variant system for bidirectional quizzes (key→signature, signature→key)",
-      "Custom 5-color palette with 10 shades each (light/dark mode support)",
-      "Multi-step onboarding (platform welcome + tool-specific tutorials)",
-      "Tool registry architecture for extensibility",
-      "Breadcrumb navigation with context-aware labels",
-    ],
-    whatNext: [
-      "User accounts with progress tracking",
-      "Spaced repetition algorithm for optimal learning intervals",
-      "Additional learning tools (ear training, sight reading, rhythm practice)",
-      "Practice analytics and performance metrics dashboard",
-      "Difficulty progression system (adaptive quiz difficulty)",
-      "Customizable card decks (major keys only, naturals only, etc.)",
-      "Audio playback for notes and intervals",
-      "Test suite covering core theory calculations",
-      "MIDI keyboard input support",
-    ],
-    githubUrl: "https://github.com/jasonjamesmoore/TheoryFlashCards",
-    subdomain: "https://practice.jasonjamesmoore.com",
-    slug: "practicekit-music-theory",
-  },
-  // {
-  //   title: "Musician's Practice Notebook",
-  //   description:
-  //     "Digital practice journal for tracking rehearsal sessions, goals, and progress over time.",
-  //   techStack: ["Next.js", "MongoDB", "TypeScript", "Tailwind CSS"],
-  //   status: "In Progress" as const,
-  //   whatWorking: [
-  //     "Session logging",
-  //     "Basic note-taking",
-  //     "Date-based organization",
-  //   ],
-  //   whatNext: [
-  //     "Goal tracking features",
-  //     "Analytics/insights",
-  //     "Audio recording integration",
-  //     "Export to PDF",
-  //   ],
-  //   githubUrl: "https://github.com/jasonjamesmoore/practice-notebook",
-  // },
-];
+
+
 
 export default function Home() {
   return (
@@ -120,48 +15,48 @@ export default function Home() {
         <section id="about" className="scroll-mt-24 space-y-6">
           <div className="space-y-3">
             <p className="text-[#9ca3af]">
-              I'm a <b className="text-[#fafafa]">software developer</b> based
-              in Wilmington, NC focused on building clear, durable systems for
-              real-world workflows. My background as an educator shapes how I
-              approach software: clarity, communication, and systems that stay
-              understandable as they grow.
+              I build <b className="text-[#fafafa]">durable software systems</b>{" "}
+              that make complex workflows easier to operate, understand, and
+              maintain. My background as an educator shapes how I work: clear
+              thinking, strong communication, and software that stays legible as
+              it grows.
             </p>
             <p className="text-[#9ca3af]">
-              I primarily work with <b className="text-[#fafafa]">React</b>,{" "}
+              My work is primarily in <b className="text-[#fafafa]">React</b>,{" "}
               <b className="text-[#fafafa]">Next.js</b>,{" "}
               <b className="text-[#fafafa]">TypeScript</b>,{" "}
               <b className="text-[#fafafa]">Postgres/Supabase</b>, and{" "}
-              <b className="text-[#fafafa]">Stripe</b>, building production
-              systems for startups and small businesses—from{" "}
-              <b className="text-[#fafafa]">subscription platforms</b> to{" "}
-              <b className="text-[#fafafa]">internal tools</b> and{" "}
-              <b className="text-[#fafafa]">onboarding systems</b>.
+              <b className="text-[#fafafa]">Stripe</b>, spanning production
+              systems like subscription platforms, internal tools, onboarding
+              flows, and workflow-heavy product features. I’m equally interested
+              in structured content systems where content models, editorial
+              workflows, and governance rules need to support clarity at scale.
             </p>
             <p className="text-[#9ca3af]">
-              I care deeply about clean architecture, thoughtful UX, and
-              building software that holds up in real-world use. Whether
-              collaborating with a team or working independently, I focus on
-              creating tools that{" "}
-              <b className="text-[#fafafa]">
-                solve real problems for real people
-              </b>
-              , built with a methodical, detail-driven engineering mindset and a
-              commitment to continuous learning.
+              I consistently gravitate toward work that balances:{" "}
+              <b className="text-[#fafafa]">product workflow, architecture,</b>{" "}
+              {""}
+              and <b className="text-[#fafafa]">long-term maintainability</b>
+              —where thoughtful UX, sound system design, and {""}
+              clear operational logic need to work together.
             </p>
           </div>
         </section>
 
-        {/* Approach */}
+        {/* Optimize */}
         <section className="pt-16 space-y-6">
           <div className="space-y-4">
-            <h2 id="approach" className="scroll-mt-24 text-2xl font-bold text-[#fafafa]">Approach</h2>
+            <h2
+              id="optimize"
+              className="scroll-mt-24 text-2xl font-bold text-[#fafafa]"
+            >
+              What I Optimize For
+            </h2>
             <p className="text-[#9ca3af] leading-relaxed">
-              I enjoy working on systems that need to stay understandable as
+              I'm most effective on systems that need to stay understandable as
               they grow.
             </p>
-            <p className="text-[#9ca3af] leading-relaxed">
-              The work I&apos;m most drawn to sits at the intersection of:
-            </p>
+            <p className="text-[#9ca3af] leading-relaxed">I optimize for:</p>
             <div className="border-l-2 border-[#10b981] pl-6 space-y-3">
               <ul className="space-y-3 text-[#9ca3af]">
                 <li className="flex items-start">
@@ -179,49 +74,44 @@ export default function Home() {
               </ul>
             </div>
           </div>
-          {/* Currently Section */}
-          {/* <div className="border-l-2 border-[#10b981] pl-6 space-y-3">
-            <h3 className="text-sm font-bold text-[#10b981] uppercase tracking-wide">
-              Currently
-            </h3>
-            <ul className="space-y-3 text-[#9ca3af]">
-              <li className="flex items-start">
-                <span className="text-[#10b981] mr-3">▹</span>
-                <span>
-                  Working with teams building modern React and Next.js platforms
-                </span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-[#10b981] mr-3">▹</span>
-                <span>
-                  Open to contract, freelance, or long-term engineering roles
-                </span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-[#10b981] mr-3">▹</span>
-                <span>
-                  Interested in solving complex product workflows end-to-end
-                </span>
-              </li>
-            </ul>
-          </div> */}
         </section>
 
         {/* Projects */}
         <section className="pt-24 space-y-6">
-          <h2 id="projects" className="scroll-mt-24 text-2xl font-bold text-[#fafafa]">
+          <h2
+            id="projects"
+            className="scroll-mt-24 text-2xl font-bold text-[#fafafa]"
+          >
             Selected Projects
           </h2>
           <div className="space-y-6">
             {projects.map((project) => (
-              <ProjectCard key={project.title} {...project} />
+              <ProjectCard
+                key={project.slug}
+                title={project.title}
+                role={project.role}
+                outcome={project.outcome}
+                description={project.card.description}
+                modalSummary={project.modal.summary}
+                proofLine={project.card.proofLine}
+                techStack={project.techStack}
+                status={project.status}
+                validated={project.modal.validated}
+                nextSteps={project.modal.nextSteps}
+                githubUrl={project.links?.github}
+                liveUrl={project.links?.live}
+                slug={project.slug}
+              />
             ))}
           </div>
         </section>
 
         {/* Experience */}
         <section className="pt-16 space-y-6">
-          <h2 id="experience" className="scroll-mt-24 text-2xl font-bold text-[#fafafa]">
+          <h2
+            id="experience"
+            className="scroll-mt-24 text-2xl font-bold text-[#fafafa]"
+          >
             Selected Experience
           </h2>
 
@@ -255,26 +145,28 @@ export default function Home() {
           </div>
         </section>
 
-        
-
         {/* Tech Stack */}
         <section className="pt-16 space-y-6">
-          <h2 id="tech" className="scroll-mt-24 text-2xl font-bold text-[#fafafa]">Tech I Use</h2>
+          <h2
+            id="tech"
+            className="scroll-mt-24 text-2xl font-bold text-[#fafafa]"
+          >
+            Tech
+          </h2>
           <div className="flex flex-wrap gap-2">
             {[
-              "JavaScript",
               "TypeScript",
               "React",
               "Next.js",
-              "Node.js",
-              "Supabase",
-              "PostgreSQL",
               "Sanity.io",
+              "Postgres/Supabase",
               "Stripe API",
+              "Node.js",
+              "JavaScript",
               "REST APIs",
-              "Git",
               "Tailwind CSS",
               "shadcn/ui",
+              "Git",
               "Mantine",
               "Framer Motion",
             ].map((tech) => (
