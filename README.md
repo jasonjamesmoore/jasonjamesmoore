@@ -1,13 +1,13 @@
 # Jason Moore
 
-Software engineer focused on modern web platforms, content architecture, editorial workflows, and scalable frontend systems.
+Software engineer building web platforms with strong content architecture, editorial workflows, and scalable frontend systems.
 
 ---
 
 ## Focus Areas
 
 • Headless CMS architecture and editorial governance  
-• Next.js / React application development  
+• Next.js and React application development  
 • Type-safe frontend systems with TypeScript  
 • Workflow-heavy product logic and API orchestration
 
@@ -16,23 +16,22 @@ Software engineer focused on modern web platforms, content architecture, editori
 ## Selected Work
 
 **Tidal Cans Subscription Scheduler**  
-Production billing and onboarding system with Stripe subscription logic, seasonal pricing, and webhook-driven lifecycle orchestration.  
-https://github.com/jasonjamesmoore/Stripe-Schedule-Onboarding
+Production billing and onboarding system with Stripe subscription logic, seasonal pricing, and webhook-driven lifecycle orchestration.
+Repo: [GitHub](https://github.com/jasonjamesmoore/Stripe-Schedule-Onboarding
+) • Demo: [Live Site](https://onboard.jasonjamesmoore.com/)
 
 **Sanity Governance Blog POC**  
-Next.js + Sanity prototype for governed content publishing, with approval states, scheduled visibility windows, and explicit release controls.  
-https://github.com/jasonjamesmoore/content-governance
+Next.js + Sanity prototype for governed content publishing, with approval states, scheduled visibility windows, and explicit release controls.
+Repo: [GitHub](https://github.com/jasonjamesmoore/content-governance)
 
 **PracticeKit**  
-Interactive music theory learning platform with custom enharmonic logic and domain-specific quiz workflows.  
-https://github.com/jasonjamesmoore/PracticeKit
+Interactive music theory learning platform with custom enharmonic logic and domain-specific quiz workflows.
+Repo: [GitHub](https://github.com/jasonjamesmoore/PracticeKit) • Demo: [Live Site](https://practice.jasonjamesmoore.com/)
+
 
 **Developer Portfolio**  
-Case studies, architecture walkthroughs, and examples of modern web platform work.  
-[https://github.com/jasonjamesmoore/jasonjamesmoore](https://github.com/jasonjamesmoore/jasonjamesmoore/tree/main/dev)
-
-**Live Portfolio**  
-https://dev.jasonjamesmoore.com
+Case studies, architecture walkthroughs, and examples of modern web platform work.
+Repo: [GitHub](https://github.com/jasonjamesmoore/jasonjamesmoore/tree/main/dev) • Demo: [Live Site](https://dev.jasonjamesmoore.com/)
 
 ---
 
