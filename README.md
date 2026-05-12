@@ -9,7 +9,7 @@ My work focuses on React, TypeScript, APIs, automation, and encoding business lo
 ## Focus Areas
 
 - Workflow-heavy product and operational systems
-- React, Next.js and TypeScript application development
+- React/Next.js and TypeScript application development
 - API integrations and lifecycle-driven automation
 - State-driven UI behavior and frontend architecture
 - Structured system design for complex business logic
@@ -52,6 +52,18 @@ Repo: [GitHub](https://github.com/jasonjamesmoore/content-governance)
 Case studies and architecture walkthroughs documenting application structure, workflow design, and frontend system implementation.
 
 Repo: [GitHub](https://github.com/jasonjamesmoore/jasonjamesmoore/tree/main/dev) • Demo: [Live Site](https://dev.jasonjamesmoore.com/)
+
+---
+
+## Exploring AI-Assisted Systems
+
+I’m particularly interested in AI as a systems component that helps translate unstructured input into structured, actionable outputs.
+
+My recent work has focused on:
+- constraint-driven prompting workflows
+- schema validation and structured outputs
+- AI-assisted workflow generation
+- grounding and validation strategies for predictable system behavior
 
 ---
 
