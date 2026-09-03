@@ -1,18 +1,17 @@
 # Jason James Moore
 
-Software engineer building workflow-driven applications, operational tooling, and structured systems that translate real-world processes into reliable software.
-
-My work focuses on React, TypeScript, APIs, automation, and encoding business logic into predictable system behavior across frontend and backend workflows.
+Software engineer building and maintaining production web applications across frontend, backend, data, and deployment. My work has included both greenfield development and inherited systems, with a focus on understanding how existing software works, solving practical problems, and improving it incrementally.
 
 ---
 
 ## Focus Areas
 
-- Workflow-heavy product and operational systems
+- Production application development and maintenance
+- Working in and improving inherited codebases
+- Testing, debugging, and iterative delivery
+- Learning new frameworks and application patterns
 - React/Next.js and TypeScript application development
 - API integrations and lifecycle-driven automation
-- State-driven UI behavior and frontend architecture
-- Structured system design for complex business logic
 
 ---
 
@@ -52,18 +51,6 @@ Repo: [GitHub](https://github.com/jasonjamesmoore/content-governance)
 Case studies and architecture walkthroughs documenting application structure, workflow design, and frontend system implementation.
 
 Repo: [GitHub](https://github.com/jasonjamesmoore/jasonjamesmoore/tree/main/dev) • Demo: [Live Site](https://dev.jasonjamesmoore.com/)
-
----
-
-## Exploring AI-Assisted Systems
-
-I’m particularly interested in AI as a systems component that helps translate unstructured input into structured, actionable outputs.
-
-My recent work has focused on:
-- constraint-driven prompting workflows
-- schema validation and structured outputs
-- AI-assisted workflow generation
-- grounding and validation strategies for predictable system behavior
 
 ---
 
