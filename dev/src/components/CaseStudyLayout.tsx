@@ -23,39 +23,36 @@ export function CaseStudyLayout({ children }: CaseStudyLayoutProps) {
         <div className="lg:flex lg:justify-between lg:gap-4">
           {/* Header/Sidebar */}
           <header className="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-[48%] lg:flex-col lg:justify-between lg:py-24 pb-12">
-            <div className="space-y-8">
+            <div className="space-y-6">
               {/* Intro */}
-              <div className="space-y-6">
-                <div className="space-y-3">
+              <div className="space-y-5">
                   <Link href="/" className="inline-block">
                     <h1 className="text-4xl font-bold text-[#fafafa] leading-none sm:text-5xl">
                       Jason James Moore
                     </h1>
                   </Link>
-                  <h2 className="mt-3 text-lg font-medium tracking-tight text-slate-200 sm:text-xl">
-                    Full-stack developer
+                  <h2 className="text-lg font-medium tracking-tight text-slate-200 sm:text-xl">
+                    Systems-focused full-stack developer
                   </h2>
-                  <p className="mt-4 max-w-xs text-[#9ca3af] leading-normal">
-                    I create intuitive, durable tools that make complex
-                    workflows feel simple.
+                  <p className="max-w-xs text-[#9ca3af] leading-normal">
+                    I <b className="text-[#fafafa]">build, extend, and stabilize</b> software around real-world workflows.
                   </p>
                   <Link
                     href="/contact"
-                    className="inline-flex items-center gap-2 mt-4 text-sm text-[#10b981] hover:text-[#fafafa] transition-colors group"
+                    className="inline-flex items-center gap-2 text-sm text-[#10b981] hover:text-[#fafafa] transition-colors group"
                   >
-                    <span>Get in touch</span>
+                    <span>Tell me what you're working on</span>
                     <span className="text-[#fb923c] transition-transform group-hover:translate-x-1">
                       →
                     </span>
                   </Link>
-                </div>
               </div>
 
               {/* Navigation - Case Study sections */}
-              <nav className="hidden lg:block space-y-1 pt-8">
+              <nav className="hidden lg:block space-y-1 pt-4">
                 <Link
                   href="#challenge"
-                  className={`group flex items-start gap-2 py-3 transition-all duration-300 ${
+                  className={`group flex items-start gap-2 py-2.5 transition-all duration-300 ${
                     activeSection === "challenge"
                       ? "pl-4 text-[#10b981] font-bold"
                       : "pl-0 text-[#9ca3af] hover:pl-2 hover:text-[#fafafa]"
@@ -83,7 +80,7 @@ export function CaseStudyLayout({ children }: CaseStudyLayoutProps) {
 
                 <Link
                   href="#approach"
-                  className={`group flex items-start gap-2 py-3 transition-all duration-300 ${
+                  className={`group flex items-start gap-2 py-2.5 transition-all duration-300 ${
                     activeSection === "approach"
                       ? "pl-4 text-[#10b981] font-bold"
                       : "pl-0 text-[#9ca3af] hover:pl-2 hover:text-[#fafafa]"
@@ -109,7 +106,7 @@ export function CaseStudyLayout({ children }: CaseStudyLayoutProps) {
 
                 <Link
                   href="#solution"
-                  className={`group flex items-start gap-2 py-3 transition-all duration-300 ${
+                  className={`group flex items-start gap-2 py-2.5 transition-all duration-300 ${
                     activeSection === "solution"
                       ? "pl-4 text-[#10b981] font-bold"
                       : "pl-0 text-[#9ca3af] hover:pl-2 hover:text-[#fafafa]"
@@ -135,7 +132,7 @@ export function CaseStudyLayout({ children }: CaseStudyLayoutProps) {
 
                 <Link
                   href="#results"
-                  className={`group flex items-start gap-2 py-3 transition-all duration-300 ${
+                  className={`group flex items-start gap-2 py-2.5 transition-all duration-300 ${
                     activeSection === "results"
                       ? "pl-4 text-[#10b981] font-bold"
                       : "pl-0 text-[#9ca3af] hover:pl-2 hover:text-[#fafafa]"
