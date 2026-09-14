@@ -23,11 +23,11 @@ export const practiceKitProject: Project = {
   },
   card: {
     description:
-      "Built a modular music-theory practice platform around a custom calculation engine for enharmonic spelling and scale-degree logic. The system validates 12,789 note/key/degree combinations in real time and powers multiple quiz modes, contextual filtering, focused-practice flows, theming, and onboarding. Designed as a structured learning tool for musicians building theory fluency.",
+      "Built a modular music-theory practice platform around a custom engine for enharmonic spelling and scale-degree logic. It validates 12,789 note/key/degree combinations in real time and powers multiple quiz and focused-practice modes.",
     proofLine: "Personal product for structured music-theory practice.",
   },
   modal: {
-    summary: "Practice platform for musicians built around a custom real-time music-theory engine that validates enharmonic spelling, scale-degree logic, and quiz-state correctness across multiple modes.",
+    summary: "Practice platform for musicians combining a custom real-time music-theory engine with guided planning and notebook workflows.",
     validated: [
       "Four quiz modes: Degree Finder, Note Finder, Key Finder, Key Signature Quiz",
       "Enharmonic calculation engine with letter-based interval logic",
@@ -37,10 +37,12 @@ export const practiceKitProject: Project = {
       "Variant system for bidirectional quizzes (key→signature, signature→key)",
       "Custom 5-color palette with 10 shades each (light/dark mode support)",
       "Multi-step onboarding (platform welcome + tool-specific tutorials)",
+      "Focused Vitest/React Testing Library tests for flashcard interactions and theory calculation edge cases",
       "Tool registry architecture for extensibility",
       "Breadcrumb navigation with context-aware labels",
     ],
     nextSteps: [
+      "Guided practice-planning workflow that turns broad principles into activities and concrete practice statements inside the notebook.",
       "User accounts with progress tracking",
       "Spaced repetition algorithm for optimal learning intervals",
       "Additional learning tools (ear training, sight reading, rhythm practice)",
@@ -48,7 +50,6 @@ export const practiceKitProject: Project = {
       "Difficulty progression system (adaptive quiz difficulty)",
       "Customizable card decks (major keys only, naturals only, etc.)",
       "Audio playback for notes and intervals",
-      "Test suite covering core theory calculations",
       "MIDI keyboard input support",
     ],
   },
@@ -246,6 +247,8 @@ Flashcards tutorial (4 steps):
 - **Maintainable architecture**: Clear separation between platform, tools, and shared utilities
 
 **User Experience:**
+
+PracticeKit is evolving from a set of theory tools into a structured practice system that helps musicians decide what to work on, turn those goals into concrete activities, and carry that plan into an editable daily notebook.
 
 - **Guided onboarding**: Multi-step tutorial introduces features without overwhelming new users
 - **Visual consistency**: Custom color palette with cohesive light/dark mode support
