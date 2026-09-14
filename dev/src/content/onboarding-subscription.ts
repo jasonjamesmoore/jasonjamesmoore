@@ -25,7 +25,7 @@ export const onboardingSubscriptionProject: Project = {
   },
   card: {
     description:
-      "Built a production onboarding and subscription management system for a residential service business. Implemented location-based seasonal pricing with Stripe Subscription Schedules, where charge schedules are automatically generated from seasonal rules tied to each service address. The system includes webhook-driven schedule creation, metadata-encoded business rules, and invoice previewing, and was built to remain maintainable as operational complexity grew.",
+      "Built a production onboarding and subscription system for a residential service business, with address-specific seasonal pricing, Stripe Subscription Schedules, webhook-driven billing logic, and real-time invoice previewing.",
     proofLine: "This portfolio demo mirrors the live production system.",
   },
   modal: {

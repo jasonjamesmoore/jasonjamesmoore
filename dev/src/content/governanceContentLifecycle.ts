@@ -5,7 +5,7 @@ export const governanceContentLifecycleProject: Project = {
   title: "Governance-First Content Lifecycle Prototype",
   role: "Full-stack engineer and content model designer",
   outcome:
-    "Built and validated a governed content lifecycle that separates approval, scheduling, and public visibility.",
+    "Modeled approval, scheduling, and public visibility as separate stages of a governed content workflow.",
   status: "Prototype",
   techStack: [
     "Next.js",
@@ -22,13 +22,13 @@ export const governanceContentLifecycleProject: Project = {
   },
   card: {
     description:
-      "Designed and implemented a governance-first content lifecycle prototype rather than a generic CMS blog. The system models ownership, editorial state, and visibility windows directly in schema, then enforces public visibility through frontend queries and route checks. Studio surfaces governance status through summaries and task-oriented queues, improving editorial clarity and maintainability.",
+      "Built a governance-first content lifecycle prototype that models ownership, editorial state, and visibility rules directly in schema, then enforces them across Studio workflows, frontend queries, and route logic.",
     proofLine:
-      "Includes a live frontend, custom Studio governance surfaces, and lifecycle enforcement across schema, queries, and route logic.",
+      "5 lifecycle states, 6 operational Studio queues, and frontend visibility enforcement.",
   },
   modal: {
     summary:
-      "Governance-first content lifecycle prototype with workflow state and ownership modeled in Sanity, operational queues surfaced in Studio, and public visibility enforced in frontend queries and route checks.",
+      "Governance-first content lifecycle prototype with explicit workflow state, operational Studio queues, and frontend visibility enforcement.",
     validated: [
       "Explicit lifecycle model on posts: draft, inReview, approved, scheduled, published.",
       "Required workflow object with blocking and warning validations for state/date consistency.",

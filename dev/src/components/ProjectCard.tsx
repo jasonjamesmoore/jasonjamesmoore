@@ -207,7 +207,7 @@ export function ProjectCard({
             {nextSteps.length > 0 && (
               <div>
                 <h4 className="text-sm font-bold text-[#fb923c] uppercase tracking-wide mb-3">
-                  → Next Steps
+                  → Future Enhancements
                 </h4>
                 <ul className="space-y-2">
                   {nextSteps.map((item, i) => (
