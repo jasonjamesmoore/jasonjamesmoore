@@ -1,4 +1,5 @@
 import { AppLayout } from "@/components/AppLayout";
+import { ContactForm } from "@/components/ContactForm";
 import { Mail, Briefcase, Code2 } from "lucide-react";
 
 export default function Contact() {
@@ -7,11 +8,9 @@ export default function Contact() {
       <section className="max-w-2xl space-y-16">
           {/* Intro */}
           <div className="space-y-6">
-            <h1 className="text-4xl font-bold text-[#fafafa]">Let's Work Together</h1>
+            <h1 className="text-4xl font-bold text-[#fafafa]">Let's Talk</h1>
             <p className="text-lg text-[#9ca3af] leading-relaxed">
-              I'm actively seeking full-time software engineering opportunities and also available for 
-              contract work. Whether you're hiring for a team or need help with a specific project, 
-              I'd love to hear from you.
+              Whether you’re hiring for a team or need help with software that’s broken, unfinished, too manual, or ready for the next step, I’d be glad to hear from you.
             </p>
           </div>
 
@@ -23,8 +22,7 @@ export default function Contact() {
                 <h3 className="text-lg font-medium text-[#fafafa]">Full-Time Roles</h3>
               </div>
               <p className="text-sm text-[#9ca3af] leading-relaxed">
-                Looking for a full-stack position where I can build reliable products, 
-                collaborate with a team, and grow as an engineer.
+                Interested in software engineering, product engineering, and support engineering roles where I can work on real systems, solve ambiguous problems, and contribute across the stack.
               </p>
             </div>
 
@@ -34,8 +32,7 @@ export default function Contact() {
                 <h3 className="text-lg font-medium text-[#fafafa]">Contract Projects</h3>
               </div>
               <p className="text-sm text-[#9ca3af] leading-relaxed">
-                Available for freelance work including MVPs, feature development, 
-                integrations, or technical consulting.
+                Available for focused fixes, inherited applications, feature work, integrations, operational tools, troubleshooting, and larger custom software projects.
               </p>
             </div>
           </div>
@@ -48,8 +45,12 @@ export default function Contact() {
                 <h2 className="text-2xl font-bold text-[#fafafa]">Get in Touch</h2>
               </div>
               <p className="text-[#9ca3af]">
-                Send me an email and I'll get back to you within 24 hours.
+                Send a quick note and I&apos;ll get back to you within 24 hours.
               </p>
+            </div>
+
+            <div className="rounded-lg border border-[rgba(156,163,175,0.2)] bg-[rgba(17,24,39,0.3)] p-6 md:p-8">
+              <ContactForm />
             </div>
 
             <a 
