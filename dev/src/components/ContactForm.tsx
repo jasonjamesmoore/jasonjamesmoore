@@ -205,7 +205,7 @@ export function ContactForm() {
                 <FormControl>
                   <Textarea
                     rows={6}
-                    placeholder="Share details about your project, goals, and blockers."
+                    placeholder="Share a little context about the role, project, or problem."
                     {...field}
                     className="border-[rgba(156,163,175,0.25)] bg-[rgba(17,24,39,0.45)] text-[#fafafa] placeholder:text-[#9ca3af] focus-visible:border-[#10b981] focus-visible:ring-[rgba(16,185,129,0.25)]"
                   />
@@ -250,7 +250,7 @@ export function ContactForm() {
             disabled={form.formState.isSubmitting}
             className="bg-[#10b981] text-[#0f172a] hover:bg-[#34d399] disabled:bg-[rgba(16,185,129,0.45)]"
           >
-            {form.formState.isSubmitting ? "Sending..." : "Send Message"}
+            {form.formState.isSubmitting ? "Sending..." : "Send Note"}
           </Button>
         </form>
       </Form>

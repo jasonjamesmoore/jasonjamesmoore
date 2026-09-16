@@ -45,43 +45,12 @@ export default function Contact() {
                 <h2 className="text-2xl font-bold text-[#fafafa]">Get in Touch</h2>
               </div>
               <p className="text-[#9ca3af]">
-                Send a quick note and I&apos;ll get back to you within 24 hours.
+                Send a quick note and I&apos;ll get back to you soon.
               </p>
             </div>
 
             <div className="rounded-lg border border-[rgba(156,163,175,0.2)] bg-[rgba(17,24,39,0.3)] p-6 md:p-8">
               <ContactForm />
-            </div>
-
-            <a 
-              href="mailto:contact@jasonjamesmoore.com" 
-              className="inline-flex items-center gap-2 text-lg text-[#10b981] hover:text-[#fafafa] transition-colors group"
-            >
-              <span>contact@jasonjamesmoore.com</span>
-              <span className="text-[#fb923c] transition-transform group-hover:translate-x-1">→</span>
-            </a>
-
-            {/* Social Links */}
-            <div className="pt-8 space-y-3">
-              <p className="text-sm text-[#9ca3af]">Or connect with me on:</p>
-              <div className="flex gap-6">
-                <a 
-                  href="https://github.com/jasonjamesmoore" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="text-[#9ca3af] hover:text-[#10b981] transition-colors text-sm"
-                >
-                  GitHub
-                </a>
-                <a 
-                  href="https://linkedin.com/in/jason-james-moore" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="text-[#9ca3af] hover:text-[#10b981] transition-colors text-sm"
-                >
-                  LinkedIn
-                </a>
-              </div>
             </div>
           </div>
         </section>
