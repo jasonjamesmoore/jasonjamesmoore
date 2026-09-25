@@ -38,15 +38,26 @@ export function AppLayout({ children }: AppLayoutProps) {
                 <p className="max-w-xs text-[#9ca3af] leading-normal">
                   I <b className="text-[#fafafa]">build, extend, and stabilize</b> software around real-world workflows.
                 </p>
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center gap-2 text-sm text-[#10b981] hover:text-[#fafafa] transition-colors group"
-                >
-                  <span>Tell me what you're working on</span>
-                  <span className="text-[#fb923c] transition-transform group-hover:translate-x-1">
-                    →
-                  </span>
-                </Link>
+                <div className="flex flex-col items-start gap-2">
+                  <Link
+                    href="/contact"
+                    className="inline-flex items-center gap-2 text-sm text-[#10b981] hover:text-[#fafafa] transition-colors group"
+                  >
+                    <span>Tell me what you're working on</span>
+                    <span className="text-[#fb923c] transition-transform group-hover:translate-x-1">
+                      →
+                    </span>
+                  </Link>
+                  <Link
+                    href="/services"
+                    className="inline-flex items-center gap-2 text-sm text-[#10b981] hover:text-[#fafafa] transition-colors group"
+                  >
+                    <span>Services</span>
+                    <span className="text-[#fb923c] transition-transform group-hover:translate-x-1">
+                      →
+                    </span>
+                  </Link>
+                </div>
               </div>
 
               {/* Navigation - In-page jump links */}
