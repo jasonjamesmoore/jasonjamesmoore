@@ -10,7 +10,7 @@ export default function Contact() {
           <div className="space-y-6">
             <h1 className="text-4xl font-bold text-[#fafafa]">Let's Talk</h1>
             <p className="text-lg text-[#9ca3af] leading-relaxed">
-              Whether you’re hiring for a team or need help with software that’s broken, unfinished, too manual, or ready for the next step, I’d be glad to hear from you.
+              Whether you’re hiring for a role or need help with software that’s broken, unfinished, too manual, or ready for the next step, I’d be glad to hear from you.
             </p>
           </div>
 

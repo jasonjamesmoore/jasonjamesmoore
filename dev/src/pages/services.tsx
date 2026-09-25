@@ -5,7 +5,7 @@ const serviceTracks = [
   {
     title: "Build",
     description:
-      "New internal tools, workflow software, dashboards, and focused applications built around how your business actually operates.",
+      "New internal tools, workflow software, dashboards, focused applications, and straightforward websites when a simpler solution is the right fit.",
   },
   {
     title: "Extend",
