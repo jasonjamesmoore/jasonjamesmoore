@@ -3,9 +3,9 @@ import type { Project } from "@/content/types";
 export const onboardingSubscriptionProject: Project = {
   slug: "onboarding-subscription-system",
   title: "Subscription Billing & Onboarding System",
-  role: "Solo Full-stack Engineer",
+  role: "Solo Full-stack Engineer / Workflow Automation Consultant",
   outcome:
-    "Automated onboarding and seasonal subscription billing based on address-specific service rules",
+    "Translated manual onboarding and seasonal billing rules into a production self-service workflow",
   status: "In Production",
   techStack: [
     "Next.js 15",
@@ -25,12 +25,12 @@ export const onboardingSubscriptionProject: Project = {
   },
   card: {
     description:
-      "Built a production onboarding and subscription system for a residential service business, with address-specific seasonal pricing, Stripe Subscription Schedules, webhook-driven billing logic, and real-time invoice previewing.",
+      "Built a production workflow automation and subscription system for a residential service business, translating manual onboarding, seasonal pricing, and multi-property billing rules into a self-service customer flow.",
     proofLine: "This portfolio demo mirrors the live production system.",
   },
   modal: {
     summary:
-      "Production onboarding and subscription system for a residential service business, where address-specific seasonal rules automatically generate Stripe subscription schedules.",
+      "Production workflow automation for a residential service business, translating address-specific service rules and seasonal pricing into self-service onboarding and automated Stripe subscription scheduling.",
     validated: [
       "Multi-step form with step-aware Zod validation",
       "Stripe payment integration with Payment Intents",
@@ -55,18 +55,20 @@ export const onboardingSubscriptionProject: Project = {
   caseStudy: {
     clientLabel: "Tidal Cans (Residential Service Company)",
     timeline: "2025",
-    tldr: "Built a production subscription management system with automated seasonal pricing for a residential service company. Architected complex multi-phase billing logic using Stripe Subscription Schedules, handling dynamic property-based pricing that automatically adjusts throughout the year. Zero webhook failures in production.",
+    tldr: "Replaced a manual onboarding and seasonal billing process with a production self-service system for a residential service business. I mapped the company’s multi-property service rules, seasonal pricing, and billing workflow, then translated them into automated Stripe subscription schedules that adjust throughout the year.",
     engagementType: "Solo Full-Stack Development",
     disclaimer:
       "This case study describes a production system currently processing real payments for Tidal Cans. The linked demo uses Stripe test mode to allow recruiters to explore the functionality without processing real transactions.",
-    challenge: `My client operates a trash valet service with complex pricing requirements. Their business model includes:
+    challenge: `My client was onboarding customers and managing recurring billing through a process that required significant manual intervention. Each customer could have multiple service addresses, different seasonal service windows, and changing prices throughout the year, making the workflow increasingly difficult to manage reliably.
+
+Before building anything, I worked through how the service and billing process actually operated. The business model included:
 
 - **Base service**: Weekly trash valet for residential properties, synced to local garbage collection days
 - **Seasonal add-ons**: Second weekly pickup during peak periods (summer at beach properties)
 - **Location-specific rules**: Different seasonal windows for different service areas
 - **Multi-property subscriptions**: Customers can subscribe for multiple addresses with mixed seasonal statuses
 
-The existing manual billing process was error-prone and couldn't scale. They needed an automated system that would:
+The existing process depended heavily on manual billing work and became harder to manage as customer and property combinations increased. They needed an automated system that would:
 
 - **Dynamically calculate pricing** based on signup date and property locations.
 - **Automatically adjust subscription costs** as properties enter/exit seasonal windows.
@@ -100,7 +102,11 @@ The existing manual billing process was error-prone and couldn't scale. They nee
           "Invoice previews must accurately reflect which properties have seasonal service in each phase",
       },
     ],
-    approach: `I architected a solution using Stripe's Subscription Schedules API, which allows defining multiple pricing phases that transition automatically on specified dates.
+    approach: `I first separated the parts of the workflow that required business judgment from the rules that could be represented reliably in software. Because pricing depended on multiple properties, location-specific seasonal windows, signup dates, and recurring changes throughout the year, a simple form or static Stripe subscription was not enough.
+
+I chose a custom onboarding workflow backed by Stripe Subscription Schedules because it let the system encode those rules once and apply them consistently without requiring staff to recreate the billing logic for each customer.
+
+The technical solution used Stripe's Subscription Schedules API to define multiple pricing phases that transition automatically on specified dates.
 
 **Key architectural decisions:** 
 
@@ -199,11 +205,11 @@ Maps cities/zip codes to rules, validates addresses during onboarding, displays 
 
 **Business Impact:**
 
-- Automated a previously manual billing process
-- Eliminated seasonal pricing errors
-- Enabled customers to self-serve onboarding
-- Provided transparent cost previews (reduces support inquiries)
-- Built foundation for future admin dashboard
+- Reduced manual onboarding and recurring billing work
+- Encoded seasonal pricing and service rules directly into the workflow
+- Enabled customers to complete multi-property onboarding without staff intervention
+- Provided customers with transparent pricing and upcoming-charge previews
+- Created a production foundation that could be extended as the client's operational needs evolved
 
 **Future Enhancements:**
 
@@ -215,16 +221,16 @@ The current implementation is a fully functional MVP. Planned expansions include
 - Subscription modification flows (add/remove properties, pause service)`,
     keyMetrics: [
       {
-        value: "Zero",
-        label: "Webhook Failures",
+        value: "Multi-Property",
+        label: "Business Rules",
         description:
-          "Idempotent design handles Stripe's retry logic gracefully",
+          "One customer flow supports multiple service addresses with different seasonal pricing windows",
       },
       {
-        value: "100%",
-        label: "Automated Billing",
+        value: "Automated",
+        label: "Subscription Scheduling",
         description:
-          "Eliminated manual billing process and seasonal pricing errors",
+          "Stripe schedule phases are generated from signup date, property selections, and seasonal service rules",
       },
     ],
     keyLearnings: [
