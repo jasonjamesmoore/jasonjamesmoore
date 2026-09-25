@@ -1,10 +1,10 @@
-import { AppLayout } from "@/components/AppLayout";
+import { ContactPageLayout } from "@/components/ContactPageLayout";
 import { ContactForm } from "@/components/ContactForm";
 import { Mail, Briefcase, Code2 } from "lucide-react";
 
 export default function Contact() {
   return (
-    <AppLayout>
+    <ContactPageLayout>
       <section className="max-w-2xl space-y-16">
           {/* Intro */}
           <div className="space-y-6">
@@ -54,6 +54,6 @@ export default function Contact() {
             </div>
           </div>
         </section>
-    </AppLayout>
+    </ContactPageLayout>
   );
 }
