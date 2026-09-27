@@ -1,4 +1,4 @@
-import { useRouter } from "next/router";
+import type { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next";
 import { CaseStudyLayout } from "@/components/CaseStudyLayout";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
@@ -6,35 +6,28 @@ import { ExternalLink, Github, ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import ReactMarkdown from "react-markdown";
 import { projectsBySlug } from "@/content/projectIndex";
+import type { Project } from "@/content/types";
 
-export default function ProjectCaseStudy() {
-  const router = useRouter();
-  const { slug } = router.query;
+type PageParams = {
+  slug: string;
+};
 
-  if (!slug || typeof slug !== "string") {
-    return null;
-  }
+type CaseStudyProject = Project & {
+  caseStudy: NonNullable<Project["caseStudy"]>;
+};
 
-  const project = projectsBySlug[slug];
-  const caseStudy = project?.caseStudy;
+type ProjectCaseStudyProps = {
+  project: CaseStudyProject;
+};
 
-  if (!project || !caseStudy) {
-    return (
-      <CaseStudyLayout>
-        <div className="max-w-3xl">
-          <h1 className="text-4xl font-bold text-[#fafafa] mb-4">
-            Project Not Found
-          </h1>
-          <Link
-            href="/"
-            className="text-[#10b981] hover:text-[#fafafa] transition-colors"
-          >
-            ← Back to Home
-          </Link>
-        </div>
-      </CaseStudyLayout>
-    );
-  }
+function hasCaseStudy(project: Project | undefined): project is CaseStudyProject {
+  return Boolean(project?.caseStudy);
+}
+
+export default function ProjectCaseStudy({
+  project,
+}: InferGetStaticPropsType<typeof getStaticProps>) {
+  const { caseStudy } = project;
 
   return (
     <CaseStudyLayout>
@@ -295,3 +288,37 @@ export default function ProjectCaseStudy() {
     </CaseStudyLayout>
   );
 }
+
+export const getStaticPaths: GetStaticPaths<PageParams> = async () => {
+  const paths = Object.values(projectsBySlug)
+    .filter((project) => Boolean(project?.caseStudy))
+    .map((project) => ({
+      params: { slug: project.slug },
+    }));
+
+  return {
+    paths,
+    fallback: false,
+  };
+};
+
+export const getStaticProps: GetStaticProps<ProjectCaseStudyProps, PageParams> =
+  async ({ params }) => {
+    const slug = params?.slug;
+
+    if (!slug) {
+      return { notFound: true };
+    }
+
+    const project = projectsBySlug[slug];
+
+    if (!hasCaseStudy(project)) {
+      return { notFound: true };
+    }
+
+    return {
+      props: {
+        project,
+      },
+    };
+  };
