@@ -1,11 +1,19 @@
 import { ContactPageLayout } from "@/components/ContactPageLayout";
 import { ContactForm } from "@/components/ContactForm";
+import { SeoHead } from "@/components/SeoHead";
 import { Mail, Briefcase, Code2 } from "lucide-react";
 
 export default function Contact() {
   return (
-    <ContactPageLayout>
-      <section className="max-w-2xl space-y-16">
+    <>
+      <SeoHead
+        title="Contact | Jason James Moore"
+        description="Contact Jason James Moore about full-time roles, contract engineering support, and software projects that need to be built, extended, or stabilized."
+        path="/contact"
+        ogType="website"
+      />
+      <ContactPageLayout>
+        <section className="max-w-2xl space-y-16">
           {/* Intro */}
           <div className="space-y-6">
             <h1 className="text-4xl font-bold text-[#fafafa]">Let's Talk</h1>
@@ -54,6 +62,7 @@ export default function Contact() {
             </div>
           </div>
         </section>
-    </ContactPageLayout>
+      </ContactPageLayout>
+    </>
   );
 }

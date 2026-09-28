@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ContactPageLayout } from "@/components/ContactPageLayout";
+import { SeoHead } from "@/components/SeoHead";
 
 const serviceTracks = [
   {
@@ -42,8 +43,15 @@ const workingStyle = [
 
 export default function Services() {
   return (
-    <ContactPageLayout>
-      <section className="max-w-2xl space-y-10">
+    <>
+      <SeoHead
+        title="Services | Jason James Moore"
+        description="Build, extend, and stabilize software systems with focused engineering support for inherited applications and operational workflows."
+        path="/services"
+        ogType="website"
+      />
+      <ContactPageLayout>
+        <section className="max-w-2xl space-y-10">
         <div className="space-y-6">
           <h1 className="text-4xl font-bold text-[#fafafa]">
             Software that&apos;s broken, unfinished, manual, or ready for the next
@@ -163,7 +171,8 @@ export default function Services() {
             </span>
           </Link>
         </div>
-      </section>
-    </ContactPageLayout>
+        </section>
+      </ContactPageLayout>
+    </>
   );
 }

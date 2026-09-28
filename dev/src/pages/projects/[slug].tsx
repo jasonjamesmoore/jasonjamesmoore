@@ -5,6 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { ExternalLink, Github, ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import ReactMarkdown from "react-markdown";
+import { SeoHead } from "@/components/SeoHead";
 import { projectsBySlug } from "@/content/projectIndex";
 import type { Project } from "@/content/types";
 
@@ -29,9 +30,22 @@ export default function ProjectCaseStudy({
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const { caseStudy } = project;
 
+  const projectDescription =
+    project.outcome ||
+    project.card.description ||
+    caseStudy.tldr ||
+    "Project case study from Jason James Moore.";
+
   return (
-    <CaseStudyLayout>
-      <div className="max-w-3xl space-y-16 pb-[50vh]">
+    <>
+      <SeoHead
+        title={`${project.title} | Case Study | Jason James Moore`}
+        description={projectDescription}
+        path={`/projects/${project.slug}`}
+        ogType="article"
+      />
+      <CaseStudyLayout>
+        <div className="max-w-3xl space-y-16 pb-[50vh]">
         {/* Header */}
         <div className="space-y-6">
           <Link
@@ -284,8 +298,9 @@ export default function ProjectCaseStudy({
             Back to All Projects
           </Link>
         </div>
-      </div>
-    </CaseStudyLayout>
+        </div>
+      </CaseStudyLayout>
+    </>
   );
 }
 

@@ -2,6 +2,7 @@ import { AppLayout } from "@/components/AppLayout";
 import { ProjectCard } from "@/components/ProjectCard";
 import { ExperienceCard } from "@/components/ExperienceCard";
 import { TechBadge } from "@/components/TechBadge";
+import { SeoHead } from "@/components/SeoHead";
 import { projects } from "@/content/projectIndex";
 
 
@@ -9,8 +10,15 @@ import { projects } from "@/content/projectIndex";
 
 export default function Home() {
   return (
-    <AppLayout>
-      <div className="pb-100">
+    <>
+      <SeoHead
+        title="Jason James Moore | Full-Stack Developer"
+        description="Full-stack portfolio featuring production workflow systems, inherited-platform stabilization, and practical software for real-world operations."
+        path="/"
+        ogType="website"
+      />
+      <AppLayout>
+        <div className="pb-100">
         {/* About */}
         <section id="about" className="scroll-mt-24 space-y-6">
           <div className="space-y-3">
@@ -153,7 +161,8 @@ export default function Home() {
             ))}
           </div>
         </section>
-      </div>
-    </AppLayout>
+        </div>
+      </AppLayout>
+    </>
   );
 }
