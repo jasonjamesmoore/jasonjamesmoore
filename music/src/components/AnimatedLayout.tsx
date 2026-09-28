@@ -1,7 +1,7 @@
 import { NavigationMenu } from "@/components/ui/navigation-menu";
 import { NavigationMenuList } from "@/components/ui/navigation-menu";
 import { NavigationMenuItem } from "@/components/ui/navigation-menu";
-import { ReactNode, useEffect, useState } from "react";
+import { ReactNode } from "react";
 import Head from "next/head";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
@@ -20,9 +20,6 @@ export default function AnimatedLayout({
   title = "Jason James Moore | Music",
   description = "Saxophonist, Composer, Educator",
 }: LayoutProps) {
-  const [mounted, setMounted] = useState(false);
-  useEffect(() => setMounted(true), []);
-
   const { scrollY } = useScroll();
   const heroLogoScale = useTransform(scrollY, [0, 300], [1, 0.25]);
   const heroLogoOpacity = useTransform(scrollY, [0, 300], [1, 0]);
@@ -42,8 +39,6 @@ export default function AnimatedLayout({
     (o) => `rgba(23, 23, 23, ${o})`
   );
   const navBlurFilter = useTransform(navBlur, (b) => `blur(${b}px)`);
-
-  if (!mounted) return null;
 
   return (
     <>
