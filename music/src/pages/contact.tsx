@@ -1,16 +1,15 @@
 import { ContactForm } from "@/components/ContactForm";
-import Head from "next/head";
+import { SeoHead } from "@/components/SeoHead";
 
 export default function ContactPage() {
   return (
     <>
-      <Head>
-        <title>Contact Jason James Moore | Saxophone Instructor Wilmington NC & Online</title>
-        <meta
-          name="description"
-          content="Have questions or ready to book lessons? Contact Wilmington’s experienced saxophone teacher, Jason James Moore, today."
-        />
-      </Head>
+      <SeoHead
+        title="Contact Jason James Moore | Saxophone Instructor Wilmington NC & Online"
+        description="Have questions or ready to book lessons? Contact Wilmington’s experienced saxophone teacher, Jason James Moore, today."
+        path="/contact"
+        ogType="website"
+      />
       <section className="px-6 py-20 [@media(min-width:795px)]:px-12 bg-gradient-to-b from-rose-100 via-indigo-100 to-white text-black">
         <div className="max-w-3xl mx-auto text-center space-y-10">
           <div className="space-y-4">

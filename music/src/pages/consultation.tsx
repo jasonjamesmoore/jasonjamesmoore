@@ -1,15 +1,14 @@
-import Head from "next/head";
+import { SeoHead } from "@/components/SeoHead";
 
 export default function ConsultationPage() {
   return (
     <>
-      <Head>
-        <title>Free Saxophone Consultation | Start Your Musical Journey</title>
-        <meta
-          name="description"
-          content="Schedule a free consultation with saxophonist Jason James Moore to explore saxophone lessons in Wilmington, NC or online."
-        />
-      </Head>
+      <SeoHead
+        title="Free Saxophone Consultation | Start Your Musical Journey"
+        description="Schedule a free consultation with saxophonist Jason James Moore to explore saxophone lessons in Wilmington, NC or online."
+        path="/consultation"
+        ogType="website"
+      />
 
       <section className="px-6 py-20 [@media(min-width:795px)]:px-12 bg-gradient-to-b from-rose-100 via-indigo-100 to-white text-black">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-start justify-between gap-y-12 lg:gap-x-12">

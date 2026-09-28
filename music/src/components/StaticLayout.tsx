@@ -1,6 +1,5 @@
 import { NavigationMenu, NavigationMenuList, NavigationMenuItem } from "@/components/ui/navigation-menu";
 import { ReactNode } from "react";
-import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
@@ -8,23 +7,11 @@ import { FaInstagram, FaFacebook, FaTwitter } from "react-icons/fa";
 
 type LayoutProps = {
   children: ReactNode;
-  title?: string;
-  description?: string;
 };
 
-export default function StaticLayout({
-  children,
-  title = "Jason James Moore | Music",
-  description = "Saxophonist, Composer, Educator",
-}: LayoutProps) {
+export default function StaticLayout({ children }: LayoutProps) {
   return (
-    <>
-      <Head>
-        <title>{title}</title>
-        <meta name="description" content={description} />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-      </Head>
-      <div className="relative min-h-screen flex flex-col bg-background text-foreground">
+    <div className="relative min-h-screen flex flex-col bg-background text-foreground">
         {/* Navigation */}
         <header
           role="banner"
@@ -146,7 +133,6 @@ export default function StaticLayout({
             </Button>
           </div>
         </footer>
-      </div>
-    </>
+    </div>
   );
 }

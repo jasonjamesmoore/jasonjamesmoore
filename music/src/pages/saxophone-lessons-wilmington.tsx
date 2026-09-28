@@ -2,6 +2,7 @@ import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
 import { MapPin, Clock, ParkingCircle } from "lucide-react";
+import { SeoHead } from "@/components/SeoHead";
 
 type SectionProps = {
   id?: string;
@@ -44,30 +45,16 @@ export default function SaxophoneLessonsWilmington({ id }: SectionProps) {
 
   return (
     <>
+      <SeoHead
+        title="Saxophone Lessons Wilmington NC | Private In-Studio Instruction"
+        description="Expert private saxophone lessons in Wilmington, NC at Northchase. All ages and skill levels. Experienced instruction with easy parking. Book your first lesson today."
+        path="/saxophone-lessons-wilmington"
+        ogType="website"
+      />
       <Head>
-        <title>
-          Saxophone Lessons Wilmington NC | Private In-Studio Instruction
-        </title>
-        <meta
-          name="description"
-          content="Expert private saxophone lessons in Wilmington, NC at Northchase. All ages and skill levels. Experienced instruction with easy parking. Book your first lesson today."
-        />
         <meta
           name="keywords"
           content="saxophone lessons Wilmington NC, saxophone instructor, private lessons, in-studio"
-        />
-        <meta
-          property="og:title"
-          content="Saxophone Lessons Wilmington NC | Jason James Moore"
-        />
-        <meta
-          property="og:description"
-          content="Private saxophone instruction in Wilmington, NC. All ages and skill levels welcome."
-        />
-        <meta property="og:type" content="website" />
-        <link
-          rel="canonical"
-          href="https://jasonjamesmoore.com/saxophone-lessons-wilmington"
         />
         <script
           type="application/ld+json"

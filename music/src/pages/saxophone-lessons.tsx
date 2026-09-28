@@ -1,4 +1,4 @@
-import Head from "next/head";
+import { SeoHead } from "@/components/SeoHead";
 import Image from "next/image";
 import {
   Tooltip,
@@ -16,13 +16,12 @@ import { ChevronRight, ChevronDown } from "lucide-react";
 export default function LessonsPage() {
   return (
     <>
-      <Head>
-        <title>Saxophone Lessons | Wilmington NC & Online</title>
-        <meta
-          name="description"
-          content="Explore saxophone lessons: tone, improvisation, technique, theory. Private lessons, group sessions, and monthly mentorship available."
-        />
-      </Head>
+      <SeoHead
+        title="Saxophone Lessons | Wilmington NC & Online"
+        description="Explore saxophone lessons: tone, improvisation, technique, theory. Private lessons, group sessions, and monthly mentorship available."
+        path="/saxophone-lessons"
+        ogType="website"
+      />
 
       <section className="px-6 py-20 md:px-12 bg-gradient-to-b from-rose-100 via-indigo-100 to-white text-black">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-start">

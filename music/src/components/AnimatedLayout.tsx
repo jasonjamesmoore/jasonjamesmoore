@@ -2,7 +2,6 @@ import { NavigationMenu } from "@/components/ui/navigation-menu";
 import { NavigationMenuList } from "@/components/ui/navigation-menu";
 import { NavigationMenuItem } from "@/components/ui/navigation-menu";
 import { ReactNode } from "react";
-import Head from "next/head";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
@@ -11,15 +10,9 @@ import { FaInstagram, FaFacebook, FaTwitter } from "react-icons/fa";
 
 type LayoutProps = {
   children: ReactNode;
-  title?: string;
-  description?: string;
 };
 
-export default function AnimatedLayout({
-  children,
-  title = "Jason James Moore | Music",
-  description = "Saxophonist, Composer, Educator",
-}: LayoutProps) {
+export default function AnimatedLayout({ children }: LayoutProps) {
   const { scrollY } = useScroll();
   const heroLogoScale = useTransform(scrollY, [0, 300], [1, 0.25]);
   const heroLogoOpacity = useTransform(scrollY, [0, 300], [1, 0]);
@@ -41,13 +34,7 @@ export default function AnimatedLayout({
   const navBlurFilter = useTransform(navBlur, (b) => `blur(${b}px)`);
 
   return (
-    <>
-      <Head>
-        <title>{title}</title>
-        <meta name="description" content={description} />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-      </Head>
-      <div className="relative min-h-screen flex flex-col bg-background text-foreground">
+    <div className="relative min-h-screen flex flex-col bg-background text-foreground">
         {/* Navigation */}
 
         <motion.header
@@ -235,7 +222,6 @@ export default function AnimatedLayout({
             </Button>
           </div>
         </footer>
-      </div>
-    </>
+    </div>
   );
 }
