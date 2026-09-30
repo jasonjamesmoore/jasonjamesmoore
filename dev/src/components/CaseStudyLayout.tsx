@@ -4,18 +4,28 @@ import Link from "next/link";
 import { ReactNode } from "react";
 import { Github, Linkedin } from "lucide-react";
 import { useActiveSection } from "@/hooks/useActiveSection";
+import { usePathname } from "next/navigation";
 
 interface CaseStudyLayoutProps {
   children: ReactNode;
 }
 
 export function CaseStudyLayout({ children }: CaseStudyLayoutProps) {
+  const pathname = usePathname();
   const activeSection = useActiveSection([
     "challenge",
     "approach",
     "solution",
     "results",
   ]);
+  const activeRoute =
+    pathname === "/"
+      ? "home"
+      : pathname === "/services"
+        ? "services"
+        : pathname === "/contact"
+          ? "contact"
+          : "";
 
   return (
     <div className="bg-[#1a1a1a] min-h-screen">
@@ -48,8 +58,87 @@ export function CaseStudyLayout({ children }: CaseStudyLayoutProps) {
                   </Link>
               </div>
 
-              {/* Navigation - Case Study sections */}
+              {/* Navigation - Site routes + case study sections */}
               <nav className="hidden lg:block space-y-1 pt-4">
+                <Link
+                  href="/"
+                  className={`group flex items-start gap-2 py-2.5 transition-all duration-300 ${
+                    activeRoute === "home"
+                      ? "pl-4 text-[#10b981] font-bold"
+                      : "pl-0 text-[#9ca3af] hover:pl-2 hover:text-[#fafafa]"
+                  }`}
+                >
+                  <span
+                    className={`text-xs text-[#fb923c] transition-opacity duration-300 ${
+                      activeRoute === "home" ? "opacity-100" : "opacity-0"
+                    }`}
+                  >
+                    ▹
+                  </span>
+                  <span
+                    className={`text-xs uppercase tracking-widest transition-all duration-300 ${
+                      activeRoute === "home"
+                        ? "scale-105"
+                        : "scale-100 group-hover:scale-102"
+                    } inline-block`}
+                  >
+                    Home
+                  </span>
+                </Link>
+
+                <Link
+                  href="/services"
+                  className={`group flex items-start gap-2 py-2.5 transition-all duration-300 ${
+                    activeRoute === "services"
+                      ? "pl-4 text-[#10b981] font-bold"
+                      : "pl-0 text-[#9ca3af] hover:pl-2 hover:text-[#fafafa]"
+                  }`}
+                >
+                  <span
+                    className={`text-xs text-[#fb923c] transition-opacity duration-300 ${
+                      activeRoute === "services" ? "opacity-100" : "opacity-0"
+                    }`}
+                  >
+                    ▹
+                  </span>
+                  <span
+                    className={`text-xs uppercase tracking-widest transition-all duration-300 ${
+                      activeRoute === "services"
+                        ? "scale-105"
+                        : "scale-100 group-hover:scale-102"
+                    } inline-block`}
+                  >
+                    Services
+                  </span>
+                </Link>
+
+                <Link
+                  href="/contact"
+                  className={`group flex items-start gap-2 py-2.5 transition-all duration-300 ${
+                    activeRoute === "contact"
+                      ? "pl-4 text-[#10b981] font-bold"
+                      : "pl-0 text-[#9ca3af] hover:pl-2 hover:text-[#fafafa]"
+                  }`}
+                >
+                  <span
+                    className={`text-xs text-[#fb923c] transition-opacity duration-300 ${
+                      activeRoute === "contact" ? "opacity-100" : "opacity-0"
+                    }`}
+                  >
+                    ▹
+                  </span>
+                  <span
+                    className={`text-xs uppercase tracking-widest transition-all duration-300 ${
+                      activeRoute === "contact"
+                        ? "scale-105"
+                        : "scale-100 group-hover:scale-102"
+                    } inline-block`}
+                  >
+                    Contact
+                  </span>
+                </Link>
+
+                <div className="mt-4 border-t border-[rgba(156,163,175,0.1)] pt-4 space-y-1">
                 <Link
                   href="#challenge"
                   className={`group flex items-start gap-2 py-2.5 transition-all duration-300 ${
@@ -155,6 +244,7 @@ export function CaseStudyLayout({ children }: CaseStudyLayoutProps) {
                     The Results
                   </span>
                 </Link>
+                </div>
               </nav>
             </div>
 

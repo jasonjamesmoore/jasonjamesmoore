@@ -48,19 +48,10 @@ export function AppLayout({ children }: AppLayoutProps) {
                       →
                     </span>
                   </Link>
-                  <Link
-                    href="/services"
-                    className="inline-flex items-center gap-2 text-sm text-[#10b981] hover:text-[#fafafa] transition-colors group"
-                  >
-                    <span>Services</span>
-                    <span className="text-[#fb923c] transition-transform group-hover:translate-x-1">
-                      →
-                    </span>
-                  </Link>
                 </div>
               </div>
 
-              {/* Navigation - In-page jump links */}
+              {/* Navigation - In-page jump links + site routes */}
               <nav className="hidden lg:block space-y-1 pt-4">
                 <Link
                   href="/#about"
@@ -190,6 +181,32 @@ export function AppLayout({ children }: AppLayoutProps) {
                     Tech
                   </span>
                 </Link>
+
+                <div className="mt-4 border-t border-[rgba(156,163,175,0.1)] pt-4 space-y-1">
+                  <Link
+                    href="/services"
+                    className="group flex items-start gap-2 py-2.5 transition-all duration-300 pl-0 text-[#9ca3af] hover:pl-2 hover:text-[#fafafa]"
+                  >
+                    <span className="text-xs text-[#fb923c] transition-opacity duration-300 opacity-0">
+                      ▹
+                    </span>
+                    <span className="text-xs uppercase tracking-widest transition-all duration-300 scale-100 group-hover:scale-102 inline-block">
+                      Services
+                    </span>
+                  </Link>
+
+                  <Link
+                    href="/contact"
+                    className="group flex items-start gap-2 py-2.5 transition-all duration-300 pl-0 text-[#9ca3af] hover:pl-2 hover:text-[#fafafa]"
+                  >
+                    <span className="text-xs text-[#fb923c] transition-opacity duration-300 opacity-0">
+                      ▹
+                    </span>
+                    <span className="text-xs uppercase tracking-widest transition-all duration-300 scale-100 group-hover:scale-102 inline-block">
+                      Contact
+                    </span>
+                  </Link>
+                </div>
               </nav>
             </div>
 
