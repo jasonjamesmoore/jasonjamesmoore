@@ -182,7 +182,7 @@ export function AppLayout({ children }: AppLayoutProps) {
                   </span>
                 </Link>
 
-                <div className="mt-4 border-t border-[rgba(156,163,175,0.1)] pt-4 space-y-1">
+                <div className="mt-4 pt-4 space-y-1">
                   <Link
                     href="/services"
                     className="group flex items-start gap-2 py-2.5 transition-all duration-300 pl-0 text-[#9ca3af] hover:pl-2 hover:text-[#fafafa]"

@@ -138,7 +138,7 @@ export function CaseStudyLayout({ children }: CaseStudyLayoutProps) {
                   </span>
                 </Link>
 
-                <div className="mt-4 border-t border-[rgba(156,163,175,0.1)] pt-4 space-y-1">
+                <div className="mt-5 pt-5 relative before:absolute before:top-0 before:w-48 before:border-t before:border-[rgba(156,163,175,0.1)]">
                 <Link
                   href="#challenge"
                   className={`group flex items-start gap-2 py-2.5 transition-all duration-300 ${
