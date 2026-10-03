@@ -3,4 +3,4 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://jasonjamesmoore.com/sitemap.xml
+Sitemap: https://music.jasonjamesmoore.com/sitemap.xml
