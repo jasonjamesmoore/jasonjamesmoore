@@ -12,7 +12,7 @@ export default function SaxophoneLessonsWilmington({ id }: SectionProps) {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "@id": "https://jasonjamesmoore.com/saxophone-lessons-wilmington",
+    "@id": "https://music.jasonjamesmoore.com/saxophone-lessons-wilmington",
     name: "Jason James Moore - Saxophone Lessons Wilmington NC",
     description:
       "Private saxophone lessons in Wilmington, NC at Northchase studio. Expert instruction for all ages and skill levels.",
