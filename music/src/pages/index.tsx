@@ -9,8 +9,8 @@ export default function HomePage() {
   return (
     <>
       <SeoHead
-        title="Saxophone Lessons Online & Wilmington NC | Jason James Moore"
-        description="Private and group saxophone lessons in Wilmington, NC or online. Experienced instruction, mentoring, and customized plans. Book your consultation today!"
+        title="Jason James Moore | Saxophonist, Composer & Educator"
+        description="Jason James Moore is a saxophonist, composer, and educator based in Wilmington, NC. Explore his music, teaching, and saxophone lessons online or in person."
         path="/"
         ogType="website"
       />
