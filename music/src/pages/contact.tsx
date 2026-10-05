@@ -1,5 +1,6 @@
 import { ContactForm } from "@/components/ContactForm";
 import { SeoHead } from "@/components/SeoHead";
+import Link from "next/link";
 
 export default function ContactPage() {
   return (
@@ -24,7 +25,14 @@ export default function ContactPage() {
             </p>
             <p className="text-lg [@media(min-width:795px)]:text-xl">
               I'd love to meet you. I encourage you to sign up for a short
-              meeting with me through the consultation buttons above and below.
+              meeting with me through the{" "}
+              <Link
+                href="/consultation"
+                className="underline decoration-neutral-500 underline-offset-2 hover:text-neutral-900"
+              >
+                consultation
+              </Link>{" "}
+              buttons above and below.
             </p>
           </div>
           <ContactForm />

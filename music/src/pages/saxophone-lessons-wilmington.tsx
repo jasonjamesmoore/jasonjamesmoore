@@ -16,7 +16,7 @@ export default function SaxophoneLessonsWilmington({ id }: SectionProps) {
     name: "Jason James Moore - Saxophone Lessons Wilmington NC",
     description:
       "Private saxophone lessons in Wilmington, NC at Northchase studio. Expert instruction for all ages and skill levels.",
-    image: "/JasonBW.jpeg",
+    image: "https://music.jasonjamesmoore.com/JasonBW.jpeg",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Wilmington",

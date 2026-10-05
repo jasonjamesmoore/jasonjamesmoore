@@ -7,6 +7,7 @@ interface SeoHeadProps {
   path: string;
   ogType?: "website" | "article";
   ogImagePath?: string;
+  robots?: string;
 }
 
 function toAbsoluteUrl(path: string): string {
@@ -23,6 +24,7 @@ export function SeoHead({
   path,
   ogType = "website",
   ogImagePath = DEFAULT_OG_IMAGE_PATH,
+  robots,
 }: SeoHeadProps) {
   const canonicalUrl = toAbsoluteUrl(path);
   const ogImageUrl = toAbsoluteUrl(ogImagePath);
@@ -31,6 +33,7 @@ export function SeoHead({
     <Head>
       <title>{title}</title>
       <meta name="description" content={description} />
+      {robots ? <meta name="robots" content={robots} /> : null}
       <link rel="canonical" href={canonicalUrl} />
 
       <meta property="og:type" content={ogType} />

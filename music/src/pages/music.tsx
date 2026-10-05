@@ -8,6 +8,7 @@ export default function Music() {
         description="Explore music projects and performances from Jason James Moore."
         path="/music"
         ogType="website"
+        robots="noindex, follow"
       />
       <section className="px-6 py-20 [@media(min-width:795px)]:px-12 bg-gradient-to-b from-rose-100 via-indigo-100 to-white text-black">
         <div className="max-w-3xl mx-auto text-center space-y-10">

@@ -1,5 +1,6 @@
 import { SeoHead } from "@/components/SeoHead";
 import Image from "next/image";
+import Link from "next/link";
 import {
   Tooltip,
   TooltipContent,
@@ -36,8 +37,15 @@ export default function LessonsPage() {
               <li>Monthly Mentorship</li>
             </ul>
             <p className="text-lg">
-              I teach saxophone lessons at my home studio in Wilmington, NC and
-              over the internet via Zoom. These lessons are for you if you are:
+              I teach saxophone lessons at my home studio in{" "}
+              <Link
+                href="/saxophone-lessons-wilmington"
+                className="underline decoration-neutral-500 underline-offset-2 hover:text-neutral-900"
+              >
+                Wilmington, NC
+              </Link>{" "}
+              and over the internet via Zoom. These lessons are for you if you
+              are:
             </p>
             <ul className="list-disc list-inside text-lg text-neutral-700 space-y-1">
               <li>
