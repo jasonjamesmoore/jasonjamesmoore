@@ -8,7 +8,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import Script from "next/script";
+import { TidyCalEmbed } from "@/components/TidyCalEmbed";
 
 export default function LessonsPage() {
   return (
@@ -201,15 +201,7 @@ export default function LessonsPage() {
 
         {/* Scheduler Embed */}
         <div className="mt-10">
-          <div
-            className="tidycal-embed"
-            data-path="moorejasonj"
-          />
-
-          <Script
-            src="https://asset-tidycal.b-cdn.net/js/embed.js"
-            strategy="afterInteractive"
-          />
+          <TidyCalEmbed path="moorejasonj" />
         </div>
       </section>
     </section>

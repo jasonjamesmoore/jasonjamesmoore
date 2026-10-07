@@ -1,5 +1,5 @@
 import { SeoHead } from "@/components/SeoHead";
-import Script from "next/script";
+import { TidyCalEmbed } from "@/components/TidyCalEmbed";
 
 export default function ConsultationPage() {
   return (
@@ -54,15 +54,7 @@ export default function ConsultationPage() {
 
     {/* TidyCal Embed */}
     <div className="max-w-4xl mx-auto">
-      <div
-        className="tidycal-embed"
-        data-path="moorejasonj/15-minute-meeting"
-      />
-
-      <Script
-        src="https://asset-tidycal.b-cdn.net/js/embed.js"
-        strategy="afterInteractive"
-      />
+      <TidyCalEmbed path="moorejasonj/15-minute-meeting" />
     </div>
   </div>
 </section>
