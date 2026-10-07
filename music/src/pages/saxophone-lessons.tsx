@@ -8,6 +8,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import Script from "next/script";
 
 export default function LessonsPage() {
   return (
@@ -197,61 +198,17 @@ export default function LessonsPage() {
           </Link>{" "}
           so we can talk about your group and goals.
         </p>
-      
-        {/* Accordion Component */}
-        {/* <div className="max-w-5xl mx-auto mt-16 border-t-2 border-b-2 border-neutral-300 py-6">
-          <Collapsible className="group">
-            <TooltipProvider>
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  <CollapsibleTrigger className="text-4xl cursor-pointer flex items-center gap-2 hover:text-amber-400 hover:text-shadow-black hover:text-shadow-md transition-colors duration-200">
-                    <ChevronRight className="transition-transform duration-300 h-8 w-8 group-data-[state=open]:rotate-90" />
-                    Common topics of study:
-                  </CollapsibleTrigger>
-                </TooltipTrigger>
-                <TooltipContent>Click to explore topics!</TooltipContent>
-              </Tooltip>
-            </TooltipProvider> */}
-
-            {/* Collapsible Content goes here */}
-            {/* <CollapsibleContent className="mt-4">
-              <ul className="space-y-2 list-disc list-inside">
-                <li>
-                  <strong>Tone Production</strong> (embouchure, air speed, long
-                  tones, etc.) - We chose saxophone lessons because we enjoy the
-                  sounds the instrument can make. Practicing this one aspect of
-                  playing alone will improve the whole experience!
-                </li>
-                <li>
-                  How to Learn and Memorize Songs and their Chord progressions!
-                </li>
-                <li>Scale Studies - singing and playing</li>
-                <li>Groove!</li>
-                <li>Creating a relationship with Diatonic Harmony</li>
-                <li>
-                  Improvising and Playing over Drones for harmonic context
-                </li>
-                <li>
-                  Experiencing first, then Explaining - Music Theory describes
-                  sound
-                </li>
-                <li>Writing solo etudes over jazz standards</li>
-                <li>Breathing Exercises</li>
-                <li>Transcribing</li>
-                <li>Developing personal vocabulary</li>
-                <li>Classical Saxophone literature</li>
-              </ul>
-            </CollapsibleContent>
-          </Collapsible>
-        </div> */}
 
         {/* Scheduler Embed */}
-        <div className="mt-10 tidycal-embed-wrapper">
-          <iframe
-            src="https://tidycal.com/moorejasonj"
-            title="Schedule saxophone lessons"
-            className="w-full h-[800px] md:h-[525px] border-0"
-            scrolling="yes"
+        <div className="mt-10">
+          <div
+            className="tidycal-embed"
+            data-path="moorejasonj"
+          />
+
+          <Script
+            src="https://asset-tidycal.b-cdn.net/js/embed.js"
+            strategy="afterInteractive"
           />
         </div>
       </section>
