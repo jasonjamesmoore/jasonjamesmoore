@@ -51,7 +51,7 @@ export default function ConsultationPage() {
             <iframe
               src="https://tidycal.com/moorejasonj/15-minute-meeting"
               title="Schedule a saxophone lesson consultation"
-              className="w-full h-[800px] border-0"
+              className="w-full h-[925px] border-0"
               scrolling="no"
             />
           </div>
