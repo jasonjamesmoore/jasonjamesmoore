@@ -3,6 +3,16 @@ import Link from "next/link";
 import Image from "next/image";
 import { MapPin, Clock, ParkingCircle } from "lucide-react";
 import { SeoHead } from "@/components/SeoHead";
+import {
+  Accordion,
+  AccordionItem,
+  AccordionTrigger,
+  AccordionContent
+} from "@/components/ui/accordion";
+import { 
+  Card, 
+  CardContent,
+} from "@/components/ui/card";
 
 type SectionProps = {
   id?: string;
@@ -27,6 +37,8 @@ export default function SaxophoneLessonsWilmington({ id }: SectionProps) {
       { "@type": "City", name: "Wilmington", state: "NC" },
       { "@type": "City", name: "Wrightsville Beach", state: "NC" },
       { "@type": "City", name: "Carolina Beach", state: "NC" },
+      { "@type": "AdministrativeArea", name: "New Hanover County, NC" },
+      { "@type": "AdministrativeArea", name: "Pender County, NC" },
     ],
     serviceType: "Saxophone Lessons",
     offers: {
@@ -36,26 +48,55 @@ export default function SaxophoneLessonsWilmington({ id }: SectionProps) {
       description:
         "1-on-1 private saxophone lessons at studio in Wilmington, NC",
     },
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "5",
-      reviewCount: "5",
-    },
   };
 
+  const faqItems = [
+    {
+      value: "where",
+      trigger: "Where are your saxophone lessons held?",
+      content: "My studio is in the Northchase area of Wilmington, NC. The location is convenient for students coming from Porters Neck, Mayfaire, Landfall, northern New Hanover County, and nearby communities in southern Pender County.",
+    },
+    {
+      value: "whomst",
+      trigger: "Who do you teach?",
+      content: "I work with saxophone students at a range of ages and experience levels, from developing players to more experienced musicians who want to strengthen their sound, technique, improvisation, musicianship, or practice process.",
+    },
+    {
+      value: "group-classes",
+      trigger: "Do you offer group classes or workshops?",
+      content: "Yes. I’m available for group classes, workshops, sectionals, and other saxophone or musicianship instruction for schools, studios, ensembles, and other local programs.",
+    },
+    {
+      value: "surrounding-areas",
+      trigger: "Do you teach students from Wrightsville Beach or the surrounding area?",
+      content: "Yes. Students from Wrightsville Beach, Carolina Beach, and other parts of the Wilmington area are welcome at my Northchase studio.",
+    },
+    {
+      value: "online",
+      trigger: "Do you offer online lessons for students outside Wilmington?",
+      content: (
+        <>
+          Yes. If you’re outside the Wilmington area, I also teach online
+          saxophone lessons via Zoom. You can learn more on my{" "}
+          <Link
+            href="/saxophone-lessons"
+            className="text-amber-600 hover:text-amber-700 underline"
+          >
+            saxophone lessons page
+          </Link>.
+        </>
+      ),
+    },
+  ];
   return (
     <>
       <SeoHead
         title="Saxophone Lessons Wilmington NC | Private In-Studio Instruction"
-        description="Expert private saxophone lessons in Wilmington, NC at Northchase. All ages and skill levels. Experienced instruction with easy parking. Book your first lesson today."
+        description="Private in-studio saxophone lessons in Wilmington, NC at my Northchase home studio. Personalized instruction for beginners through experienced players."
         path="/saxophone-lessons-wilmington"
         ogType="website"
       />
       <Head>
-        <meta
-          name="keywords"
-          content="saxophone lessons Wilmington NC, saxophone instructor, private lessons, in-studio"
-        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
@@ -75,37 +116,17 @@ export default function SaxophoneLessonsWilmington({ id }: SectionProps) {
                 href="/consultation"
                 className="inline-block bg-amber-200/70 text-slate-700 hover:bg-amber-200 font-bold py-3 px-6 rounded-lg transition text-2xl"
               >
-                Schedule a Call with Me
+                Schedule a Consultation
               </Link>
             </div>
-            <ul className="list-disc list-inside text-lg text-neutral-700 space-y-1">
-              <li>1:1 Private Lessons</li>
-              <li>Group Classes</li>
-              <li>Monthly Mentorship</li>
-            </ul>
+            <div className="flex flex-wrap justify-center items-center gap-2 text-sm md:text-base font-medium text-neutral-600">
+              <span>Private In-Studio Lessons</span>
+              <span aria-hidden="true">•</span>
+              <span>Group Classes & Workshops</span>
+            </div>
             <p className="text-lg">
-              I teach saxophone lessons at my home studio in Wilmington, NC and
-              over the internet via Zoom. These lessons are for you if you are:
+              I teach private saxophone lessons at my home studio in the Northchase area of Wilmington, NC. We work directly with your sound, technique, musicianship, and practice so each lesson stays connected to the music you want to play.
             </p>
-            <ul className="list-disc list-inside text-lg text-neutral-700 space-y-1">
-              <li>
-                <strong>Ready</strong> to jump right into ongoing, meaningful
-                lessons.
-              </li>
-              <li>
-                <strong>Curious</strong> about growing as a musician with
-                reflection and support.
-              </li>
-              <li>
-                <strong>Motivated</strong> to practice and see progress between
-                sessions.
-              </li>
-              <li>
-                <strong>Interested</strong> in building confidence and playing
-                with others.
-              </li>
-            </ul>
-            
           </div>
 
           {/* Right image */}
@@ -136,15 +157,14 @@ export default function SaxophoneLessonsWilmington({ id }: SectionProps) {
           <h2 className="text-3xl [@media(min-width:795px)]:text-5xl font-bold text-center mb-16">
             Why Choose In-Studio Lessons in Wilmington?
           </h2>
-          <div className="grid [@media(min-width:795px)]:grid-cols-2 divide-y [@media(min-width:795px)]:divide-y-0 divide-neutral-300">
-            <div className="flex flex-col items-center justify-center px-6 py-10 text-center space-y-4 [@media(min-width:795px)]:border-r [@media(min-width:795px)]:border-neutral-300">
+          <div className="grid gap-8 [@media(min-width:795px)]:grid-cols-3 ">
+            <div className="flex flex-col items-center justify-center px-6 py-10 text-center space-y-4">
               <h3 className="text-xl [@media(min-width:795px)]:text-2xl font-bold">
-                One-on-One Attention
+                Direct, In-Room Feedback
               </h3>
               <p className="text-md [@media(min-width:795px)]:text-lg text-neutral-700">
-                Direct feedback on your tone, technique, and posture. I can
-                demonstrate concepts on my instrument and provide immediate
-                corrections to help you progress faster.
+                Working together in the same room makes it easy to address tone, articulation, breathing, posture, and technique as you play. I can
+                demonstrate concepts on my instrument and respond directly to what I'm hearing and seeing.
               </p>
             </div>
             <div className="flex flex-col items-center justify-center px-6 py-10 text-center space-y-4">
@@ -152,34 +172,23 @@ export default function SaxophoneLessonsWilmington({ id }: SectionProps) {
                 Dedicated Studio Space
               </h3>
               <p className="text-md [@media(min-width:795px)]:text-lg text-neutral-700">
-                Professional studio environment in the Northchase area with
-                excellent acoustics. Easy parking makes it convenient to access.
-              </p>
-            </div>
-            <div className="flex flex-col items-center justify-center px-6 py-10 text-center space-y-4 [@media(min-width:795px)]:border-r [@media(min-width:795px)]:border-neutral-300">
-              <h3 className="text-xl [@media(min-width:795px)]:text-2xl font-bold">
-                Local Community Connection
-              </h3>
-              <p className="text-md [@media(min-width:795px)]:text-lg text-neutral-700">
-                Connect with other saxophone students in Wilmington.
-                Opportunities to perform together and build relationships with
-                local musicians.
+                Lessons take place in a dedicated home studio in the Northchase area, with a comfortable environment for playing, listening, and working through musical ideas together.
               </p>
             </div>
             <div className="flex flex-col items-center justify-center px-6 py-10 text-center space-y-4">
               <h3 className="text-xl [@media(min-width:795px)]:text-2xl font-bold">
-                Consistent Routine
+                Convenient Wilmington Location
               </h3>
               <p className="text-md [@media(min-width:795px)]:text-lg text-neutral-700">
-                Weekly recurring lessons in a dedicated space help establish
-                routine and maximize practice effectiveness between sessions.
+                My studio is in the Northchase area, with convenient access from Wilmington and nearby communities in northern New Hanover and southern Pender counties.
               </p>
             </div>
           </div>
+          <div className="mt-12 max-w-6xl mx-auto h-px bg-neutral-300" />
         </div>
         {/* Studio Location Info */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-0 mt-12 divide-x">
-          <div className="flex gap-4 justify-center">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-12 max-w-5xl mx-auto">
+          <div className="flex flex-col gap-3 items-center text-center">
             <MapPin className="h-8 w-8 text-amber-600 flex-shrink-0 mt-1" />
             <div>
               <h3 className="font-bold text-lg mb-2">Studio Location</h3>
@@ -189,7 +198,7 @@ export default function SaxophoneLessonsWilmington({ id }: SectionProps) {
               </p>
             </div>
           </div>
-          <div className="flex gap-4 justify-center">
+          <div className="flex flex-col gap-3 items-center text-center">
             <Clock className="h-8 w-8 text-amber-600 flex-shrink-0 mt-1" />
             <div>
               <h3 className="font-bold text-lg mb-2">Hours</h3>
@@ -200,77 +209,52 @@ export default function SaxophoneLessonsWilmington({ id }: SectionProps) {
               </p>
             </div>
           </div>
-          <div className="flex gap-4 justify-center">
+          <div className="flex flex-col gap-3 items-center text-center">
             <ParkingCircle className="h-8 w-8 text-amber-600 flex-shrink-0 mt-1" />
             <div>
               <h3 className="font-bold text-lg mb-2">Parking</h3>
               <p className="text-muted-foreground">
-                Easy parking
-                <br />
-                Available for all students
+                Easy on-site parking
               </p>
             </div>
           </div>
         </div>
         {/* CTA Section */}
+        <div className="mt-16 max-w-5xl mx-auto h-px bg-neutral-300" />
         <div className="my-20 text-center">
           <h2 className="text-4xl font-serif font-bold mb-4">
-            Ready to Start Your Saxophone Journey?
+            Interested in In-Studio Saxophone Lessons?
           </h2>
           <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Schedule a consultation to discuss your musical goals and book your
-            first lesson at my Wilmington studio.
+            Schedule a consultation to talk about your goals, availability, and whether lessons at my Wilmington studio are a good fit.
           </p>
           <Link
             href="/consultation"
             className="inline-block bg-amber-200/70 text-slate-700 hover:bg-amber-200 text-2xl font-bold py-3 px-6 rounded-lg transition"
           >
-            Get Started Today
+            Schedule a Consultation
           </Link>
         </div>
 
         {/* FAQ Section */}
-        <div className="max-w-4xl mx-auto mt-20">
-          <h2 className="text-3xl [@media(min-width:795px)]:text-4xl font-bold text-center mb-12">
+        <div className="max-w-4xl mx-auto mt-20 mb-16">
+          <h2 className="text-3xl [@media(min-width:795px)]:text-4xl font-bold text-center mb-10">
             Frequently Asked Questions
           </h2>
-          <div className="space-y-8">
-            <div>
-              <h3 className="text-xl font-bold mb-3">
-                Where in Wilmington are lessons held?
-              </h3>
-              <p className="text-muted-foreground leading-relaxed">
-                My studio is located in the Northchase area of Wilmington, most convenient to Landfall, Porters Neck, and Mayfaire. The studio offers a professional environment and easy parking.
-              </p>
-            </div>
-            <div>
-              <h3 className="text-xl font-bold mb-3">
-                Do you teach students from Wrightsville Beach?
-              </h3>
-              <p className="text-muted-foreground leading-relaxed">
-                Yes! I regularly teach students from Wrightsville Beach, Carolina Beach, and surrounding coastal areas. The location is easily accessible from the beach communities.
-              </p>
-            </div>
-            <div>
-              <h3 className="text-xl font-bold mb-3">
-                Is parking available at your Wilmington studio?
-              </h3>
-              <p className="text-muted-foreground leading-relaxed">
-                Yes, there is easy, convenient parking available.
-              </p>
-            </div>
-            <div>
-              <h3 className="text-xl font-bold mb-3">
-                Do you offer online lessons for students outside Wilmington?
-              </h3>
-              <p className="text-muted-foreground leading-relaxed">
-                Yes! If you're not in the Wilmington area, I offer high-quality online saxophone lessons via Zoom. Learn more on my{" "}
-                <Link href="/saxophone-lessons" className="text-amber-600 hover:text-amber-700 underline">
-                  saxophone lessons page
-                </Link>.
-              </p>
-            </div>
-          </div>
+
+
+          <Card className="w-full">
+            <CardContent>
+              <Accordion type="single" collapsible defaultValue="where">
+                {faqItems.map((item) => (
+                  <AccordionItem key={item.value} value={item.value}>
+                    <AccordionTrigger>{item.trigger}</AccordionTrigger>
+                    <AccordionContent>{item.content}</AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
+            </CardContent>
+          </Card>
         </div>
       </section>
     </>

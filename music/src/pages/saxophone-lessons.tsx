@@ -2,24 +2,19 @@ import { SeoHead } from "@/components/SeoHead";
 import Image from "next/image";
 import Link from "next/link";
 import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
-import {
-  Collapsible,
-  CollapsibleContent,
-  CollapsibleTrigger,
-} from "@radix-ui/react-collapsible";
-import { ChevronRight, ChevronDown } from "lucide-react";
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 
 export default function LessonsPage() {
   return (
     <>
       <SeoHead
-        title="Saxophone Lessons | Wilmington NC & Online"
-        description="Explore saxophone lessons: tone, improvisation, technique, theory. Private lessons, group sessions, and monthly mentorship available."
+        title="Saxophone Lessons | Online & In Person with Jason James Moore"
+        description="Private saxophone lessons, monthly mentorship, and group classes focused on sound, technique, improvisation, musicianship, and practical progress."
         path="/saxophone-lessons"
         ogType="website"
       />
@@ -28,48 +23,43 @@ export default function LessonsPage() {
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
           {/* Left text content */}
           <div className="space-y-6">
-            <h1 className="text-5xl md:text-6xl font-serif font-bold">
-              PRACTICE WITH ME
-            </h1>
-            <ul className="list-disc list-inside text-lg text-neutral-700 space-y-1">
-              <li>1:1 Private Lessons</li>
-              <li>Group Classes</li>
-              <li>Monthly Mentorship</li>
-            </ul>
+            <div className="space-y-3">
+              <p className="text-md uppercase tracking-[0.2em] text-neutral-600">
+                Practice With Me
+              </p>
+              <h1 className="text-5xl md:text-6xl font-serif font-bold">
+                Saxophone Lessons
+              </h1>
+            </div>
             <p className="text-lg">
-              I teach saxophone lessons at my home studio in{" "}
-              <Link
-                href="/saxophone-lessons-wilmington"
-                className="underline decoration-neutral-500 underline-offset-2 hover:text-neutral-900"
-              >
-                Wilmington, NC
-              </Link>{" "}
-              and over the internet via Zoom. These lessons are for you if you
-              are:
+              I offer saxophone lessons online and in person for students who want a thoughtful, practical approach to improving as musicians.
+              If you’re in Wilmington, NC, you can also study with me in person at my home studio. Saxophone lessons with me can help you:
             </p>
             <ul className="list-disc list-inside text-lg text-neutral-700 space-y-1">
               <li>
-                <strong>Ready</strong> to jump right into ongoing, meaningful
-                lessons.
+                Develop a stronger, more consistent <strong>sound</strong> with greater ease.
               </li>
               <li>
-                <strong>Curious</strong> about growing as a musician with
-                reflection and support.
+                Build <strong>technique</strong> that supports the music you want to play.
               </li>
               <li>
-                <strong>Motivated</strong> to practice and see progress between
-                sessions.
+                Improve <strong>improvisation</strong>, <strong>ear training</strong>, and <strong>musical vocabulary</strong>.
               </li>
               <li>
-                <strong>Interested</strong> in building confidence and playing
-                with others.
+                Understand <strong>harmony and theory</strong> through direct, <strong>practical musical experience</strong>.
+              </li>
+              <li>
+                Build practice processes that lead to meaningful progress.
               </li>
             </ul>
-            <div className="flex items-center gap-2">
-              <ChevronDown />
-              <h2 className="text-3xl text-amber-400 text-shadow-black text-shadow-md">Schedule Lessons Below</h2>
-              <ChevronDown />
-            </div>
+            <Button
+              asChild
+              className="h-9 inline-flex items-center rounded-md bg-amber-200/70 px-4 py-2 text-lg font-medium text-black hover:bg-amber-200 shadow-lg border border-neutral-900/15"
+            >
+              <Link href="#schedule">
+                Schedule Lessons
+              </Link>
+            </Button>
           </div>
 
           {/* Right image */}
@@ -84,8 +74,132 @@ export default function LessonsPage() {
           </div>
         </div>
 
+          {/* Offering Cards */}
+            
+            <div className="mt-16 max-w-5xl mx-auto">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">Ways to Work Together</h2>
+
+              <div className="grid gap-6 md:grid-cols-3">
+                <Card className="h-full bg-white/70">
+                  <CardHeader className="pb-2">
+                    <CardTitle className="text-xl">Private Saxophone Lessons</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-neutral-700 leading-relaxed">
+                      Recurring one-on-one lessons shaped around your playing, musical goals, and the work you’re doing between sessions.
+                    </p>
+                  </CardContent>
+                </Card>
+
+                <Card className="h-full bg-white/70">
+                  <CardHeader className="pb-2">
+                    <CardTitle className="text-xl">Monthly Mentorship</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-neutral-700 leading-relaxed">
+                      One 60-minute lesson followed by a personalized month-long practice plan, with supporting videos, charts, and explanations as needed, plus text & email communication along the way.
+                    </p>
+                  </CardContent>
+                </Card>
+
+                <Card className="h-full bg-white/70">
+                  <CardHeader className="pb-2">
+                    <CardTitle className="text-xl">Group Classes</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-neutral-700 leading-relaxed">
+                      Workshops and recurring classes for school programs, studios, and ensembles, designed with directors and section leaders around topics like improvisation, musicianship, saxophone technique, and ensemble skills.
+                    </p>
+                  </CardContent>
+                </Card>
+              </div>
+            </div> 
+
+
+      <section className="mt-16">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            What We Can Work On
+          </h2>
+          <p className="text-md text-neutral-600 mb-6 leading-relaxed">
+            Lessons can draw from a wide range of technical, musical, and creative topics depending on your goals. I generally approach these ideas through sound and musical experience first, using theory and technique to describe, support, and expand what you can already hear and feel.
+          </p>
+
+          {/* Put a link here later like "Read More about how I approach teaching" */}
+          
+
+          <div className="grid gap-8 md:grid-cols-3">
+            <div className="border-l border-neutral-300 pl-5 py-2">
+              <h3 className="text-xl font-bold mb-3">
+                Sound & Technique
+              </h3>
+              <ul className="list-disc list-inside space-y-2 text-neutral-700">
+                <li>Tone production</li>
+                <li>Breathing</li>
+                <li>Embouchure and air support</li>
+                <li>Scale studies</li>
+                <li>Classical saxophone literature</li>
+              </ul>
+            </div>
+
+            <div className="border-l border-neutral-300 pl-5 py-2">
+              <h3 className="text-xl font-bold mb-3">
+                Improvisation & Musicianship
+              </h3>
+              <ul className="list-disc list-inside space-y-2 text-neutral-700">
+                <li>Improvisation</li>
+                <li>Groove</li>
+                <li>Ear training</li>
+                <li>Transcription</li>
+                <li>Developing personal vocabulary</li>
+              </ul>
+            </div>
+
+            <div className="border-l border-neutral-300 pl-5 py-2">
+              <h3 className="text-xl font-bold mb-3">
+                Harmony, Theory & Repertoire
+              </h3>
+              <ul className="list-disc list-inside space-y-2 text-neutral-700">
+                <li>Learning and memorizing songs and chord progressions</li>
+                <li>Diatonic harmony</li>
+                <li>Playing over drones for harmonic context</li>
+                <li>Music theory through sound first</li>
+                <li>Writing solo etudes over jazz standards</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="schedule" className="mt-24 max-w-5xl mx-auto border-t border-neutral-300 pt-12">
+        <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          Schedule Saxophone Lessons
+        </h2>
+
+        <p className="text-lg text-neutral-700 mb-2">
+          Ready to get started? Choose private lessons or monthly mentorship below.
+          If you’re not sure which option is the right fit, you can{" "}
+          <Link
+            href="/consultation"
+            className="underline underline-offset-2 hover:text-neutral-900"
+          >
+            schedule a free consultation
+          </Link>{" "}
+          first.
+        </p>
+
+        <p className="text-lg text-neutral-700 mb-8">
+          For group classes, school programs, or workshops,{" "} 
+          <Link
+            href="/contact"
+            className="underline underline-offset-2 hover:text-neutral-900"
+          >
+            contact me directly
+          </Link>{" "}
+          so we can talk about your group and goals.
+        </p>
+      
         {/* Accordion Component */}
-        <div className="max-w-5xl mx-auto mt-16 border-t-2 border-b-2 border-neutral-300 py-6">
+        {/* <div className="max-w-5xl mx-auto mt-16 border-t-2 border-b-2 border-neutral-300 py-6">
           <Collapsible className="group">
             <TooltipProvider>
               <Tooltip>
@@ -97,10 +211,10 @@ export default function LessonsPage() {
                 </TooltipTrigger>
                 <TooltipContent>Click to explore topics!</TooltipContent>
               </Tooltip>
-            </TooltipProvider>
+            </TooltipProvider> */}
 
             {/* Collapsible Content goes here */}
-            <CollapsibleContent className="mt-4">
+            {/* <CollapsibleContent className="mt-4">
               <ul className="space-y-2 list-disc list-inside">
                 <li>
                   <strong>Tone Production</strong> (embouchure, air speed, long
@@ -129,18 +243,19 @@ export default function LessonsPage() {
               </ul>
             </CollapsibleContent>
           </Collapsible>
-        </div>
+        </div> */}
 
         {/* Scheduler Embed */}
-        <div className="mt-20 tidycal-embed-wrapper max-w-5xl mx-auto">
+        <div className="mt-10 tidycal-embed-wrapper">
           <iframe
             src="https://tidycal.com/moorejasonj"
             title="Schedule saxophone lessons"
             className="w-full h-[800px] md:h-[525px] border-0"
-    scrolling="yes"
+            scrolling="yes"
           />
         </div>
       </section>
+    </section>
     </>
   );
 }
